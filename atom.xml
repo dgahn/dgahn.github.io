@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-07-30T08:57:27.436Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>안덕기</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo로 블로그 만들기</title>
+    <link href="http://yoursite.com/2019/07/30/00-hexo-blog/"/>
+    <id>http://yoursite.com/2019/07/30/00-hexo-blog/</id>
+    <published>2019-07-30T08:57:27.436Z</published>
+    <updated>2019-07-30T08:57:27.436Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>블로그를 만들고 싶다는 생각에 인터넷을 찾아서 보았다.<br><del>gitlab에서 한번 만든적이 있는데 거의 사용하지 않고 있다.</del> 만들면서 참고한 사이트가 있다.<br>블로그에서는 친절하게 설명을 해주고 있는데 나는 정말 간단하게 명령어를 순서대로 나열할 예정이다. 그러니 자세한 설명을 듣고 싶은 사람은 <a href="https://juicyjusung.github.io/2019/01/23/hexo/Hexo-github-pages%EB%A1%9C-%EA%B7%B8%EB%9F%B4%EC%8B%B8%ED%95%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/" rel="external nofollow noopener noreferrer" target="_blank">링크</a>를 참고하길 바란다.<br>정말 설명을 잘해주셔서 블로그를 띄우는데 많은 도움이 되었다. 다시한번 말하지만 상세한 설정법을 알고 싶으면 링크를 찾아가서 하는 것을 추천한다.</p><h2 id="Git-amp-npm-install"><a href="#Git-amp-npm-install" class="headerlink" title="Git &amp; npm install"></a>Git &amp; npm install</h2><ul><li><a href="https://nodejs.org/ko/download/" rel="external nofollow noopener noreferrer" target="_blank">Node.js 설치</a></li><li><a href="https://git-scm.com/downloads" rel="external nofollow noopener noreferrer" target="_blank">Git 설치</a></li></ul><h2 id="hexo-설치"><a href="#hexo-설치" class="headerlink" title="hexo 설치"></a>hexo 설치</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm i -g</span><br><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure><h2 id="hexo-blog-init"><a href="#hexo-blog-init" class="headerlink" title="hexo blog init"></a>hexo blog init</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init hexo-blog(프로젝트 명)</span><br></pre></td></tr></table></figure><h2 id="hexo-실행"><a href="#hexo-실행" class="headerlink" title="hexo 실행"></a>hexo 실행</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><h2 id="새로운-테마-적용"><a href="#새로운-테마-적용" class="headerlink" title="새로운 테마 적용"></a>새로운 테마 적용</h2><p>새로운 테마를 적용하기전에 모듈을 몇개 다운 받는다. 무슨 모듈인지는 모르겠다.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i hexo-generator-json-content --save &amp;&amp; npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure><p>새로운 테마를 찾아서 클론 해온다. 여기선 <a href="http://firework.studio/archer-demo/" rel="external nofollow noopener noreferrer" target="_blank">archer</a>를 사용한다.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/fi3ework/hexo-theme-archer.git</span><br></pre></td></tr></table></figure><p>마지막으로 프로젝트 루트의 <strong>__config.yml</strong>에서 </p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">archer</span></span><br></pre></td></tr></table></figure><p>라고 적용하면 새로운 테마 적용은 완성~ 완성된 테마를 구경해보자.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>배포하는 법에 대해서는 <a href="https://juicyjusung.github.io/2019/01/24/hexo/Hexo-github-pages%EB%A1%9C-%EA%B7%B8%EB%9F%B4%EC%8B%B8%ED%95%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/" rel="external nofollow noopener noreferrer" target="_blank">링크</a>을 참고하면 된다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;서론&quot;&gt;&lt;a href=&quot;#서론&quot; class=&quot;headerlink&quot; title=&quot;서론&quot;&gt;&lt;/a&gt;서론&lt;/h2&gt;&lt;p&gt;블로그를 만들고 싶다는 생각에 인터넷을 찾아서 보았다.&lt;br&gt;&lt;del&gt;gitlab에서 한번 만든적이 있는데 거의 사용하지 않고
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
