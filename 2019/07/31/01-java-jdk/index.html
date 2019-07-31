@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hexo로 블로그 만들기 · dgahn&#39;s의 개발 블로그</title>
+    <title>Java - 자바 개발 환경 · dgahn&#39;s의 개발 블로그</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">dgahn&#39;s의 개발 블로그</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hexo로 블로그 만들기</a>
+                <a href="#" class="post-name">Java - 자바 개발 환경</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hexo로 블로그 만들기
+            Java - 자바 개발 환경
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>글자수: <span class="post-count word-count">178</span>읽는 시간: <span class="post-count reading-time">1 min</span></span>
+                        <span>글자수: <span class="post-count word-count">181</span>읽는 시간: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/07/30</span>
+                    <span class="post-intro-time">2019/07/31</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,30 +395,24 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>블로그를 만들고 싶다는 생각에 인터넷을 찾아서 보았다.<br><del>gitlab에서 한번 만든적이 있는데 거의 사용하지 않고 있다.</del> 만들면서 참고한 사이트가 있다.<br>블로그에서는 친절하게 설명을 해주고 있는데 나는 정말 간단하게 명령어를 순서대로 나열할 예정이다. 그러니 자세한 설명을 듣고 싶은 사람은 <a href="https://juicyjusung.github.io/2019/01/23/hexo/Hexo-github-pages%EB%A1%9C-%EA%B7%B8%EB%9F%B4%EC%8B%B8%ED%95%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/" rel="external nofollow noopener noreferrer" target="_blank">링크</a>를 참고하길 바란다.<br>정말 설명을 잘해주셔서 블로그를 띄우는데 많은 도움이 되었다. 다시한번 말하지만 상세한 설정법을 알고 싶으면 링크를 찾아가서 하는 것을 추천한다.</p>
-<h2 id="Git-amp-npm-install"><a href="#Git-amp-npm-install" class="headerlink" title="Git &amp; npm install"></a>Git &amp; npm install</h2><ul>
-<li><a href="https://nodejs.org/ko/download/" rel="external nofollow noopener noreferrer" target="_blank">Node.js 설치</a></li>
-<li><a href="https://git-scm.com/downloads" rel="external nofollow noopener noreferrer" target="_blank">Git 설치</a></li>
+        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>자바의 가장 큰 장점 중의 하나는 “Write once, run anywhere.(한 번 작성하면 어디서든 실행된다.)” 이다. 이 것을 가능하게 해주는 것은 자바가 가지는 특별한 개발 환경 덕분이다. 자바의 세계는 아래와 같은 3가지 도구로 구성되어 있다.</p>
+<ul>
+<li><p>JVM(Java Virtual Machine) : 자바 가상 기계</p>
+</li>
+<li><p>JRE(Java Runtime Environment) : 자바 실행 환경</p>
+</li>
+<li><p>JDK(Java Development Kit) : 자바 개발 도구</p>
+</li>
 </ul>
-<h2 id="hexo-설치"><a href="#hexo-설치" class="headerlink" title="hexo 설치"></a>hexo 설치</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm i -g</span><br><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="hexo-blog-init"><a href="#hexo-blog-init" class="headerlink" title="hexo blog init"></a>hexo blog init</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init hexo-blog(프로젝트 명)</span><br></pre></td></tr></table></figure>
-
-<h2 id="hexo-실행"><a href="#hexo-실행" class="headerlink" title="hexo 실행"></a>hexo 실행</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<h2 id="새로운-테마-적용"><a href="#새로운-테마-적용" class="headerlink" title="새로운 테마 적용"></a>새로운 테마 적용</h2><p>새로운 테마를 적용하기전에 모듈을 몇개 다운 받는다. 무슨 모듈인지는 모르겠다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i hexo-generator-json-content --save &amp;&amp; npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
-
-<p>새로운 테마를 찾아서 클론 해온다. 여기선 <a href="http://firework.studio/archer-demo/" rel="external nofollow noopener noreferrer" target="_blank">archer</a>를 사용한다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/fi3ework/hexo-theme-archer.git</span><br></pre></td></tr></table></figure>
-
-<p>마지막으로 프로젝트 루트의 <strong>__config.yml</strong>에서 </p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">archer</span></span><br></pre></td></tr></table></figure>
-
-<p>라고 적용하면 새로운 테마 적용은 완성~ 완성된 테마를 구경해보자.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>배포하는 법에 대해서는 <a href="https://juicyjusung.github.io/2019/01/24/hexo/Hexo-github-pages%EB%A1%9C-%EA%B7%B8%EB%9F%B4%EC%8B%B8%ED%95%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/" rel="external nofollow noopener noreferrer" target="_blank">링크</a>을 참고하면 된다.</p>
+<h2 id="JVM-JRE-JDK-관계"><a href="#JVM-JRE-JDK-관계" class="headerlink" title="JVM, JRE, JDK 관계"></a>JVM, JRE, JDK 관계</h2><ul>
+<li><p>JRE = JVM + 표준 클래스 라이브러리</p>
+</li>
+<li><p>JDK = JRE + 개발에 필요한 도구</p>
+</li>
+</ul>
+<h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>JVM은 컴퓨터로 따지면 물리적인 기계에 해당한다. 자바가 실행할 수 있도록 가상의 공간을 내 컴퓨터에 할당한다. Java 소스 코드를 javac 컴파일러를 통해서 컴파일을 하면<br>바이트 코드로 변환이 되는데 이 때, 이 바이트 코드를 JVM이 JIT 컴파일 방식으로 코드를 실행한다. (JIT: 실행하는 부분만 필요한 시점에 컴파일 하는 방식)</p>
+<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>Java Runtime Environment. 말 그대로 자바를 실행할 수 있는 환경을 제공해준다. 예를 들어, 바이트 코드로 전환된 코드를 JVM에게 전달(적재)하는 역할을 JRE에 있는<br>Java class loader가 해준다.</p>
+<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JRE, Java 바이트 코드 컴파일러, Java 디버거등으로 구성되어 있다. 실제로 Java를 통해서 개발을 할 때 필요한 도구등을 제공해준다. 간단하게 생각하면 System.out.println()이 JDK에서 제공하는 표준 라이브러리 중 하나다.  </p>
 
     </article>
     <!-- license  -->
@@ -427,13 +421,13 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/07/31/01-java-jdk/" title="Java - 자바 개발 환경">
-                    <div class="nextTitle">Java - 자바 개발 환경</div>
-                </a>
-            
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/07/30/00-hexo-blog/" title="Hexo로 블로그 만들기">
+                    <div class="prevTitle">Hexo로 블로그 만들기</div>
+                </a>
             
         </li>
     </ul>
@@ -449,8 +443,8 @@ height:50vh;
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
         var disqus_config = function () {
-        this.page.url = "http://yoursite.com/2019/07/30/00-hexo-blog/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "Hexo로 블로그 만들기"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://yoursite.com/2019/07/31/01-java-jdk/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "Java - 자바 개발 환경"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
         (function () { // DON'T EDIT BELOW THIS LINE
@@ -556,7 +550,7 @@ height:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-amp-npm-install"><span class="toc-number">2.</span> <span class="toc-text">Git &amp; npm install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-설치"><span class="toc-number">3.</span> <span class="toc-text">hexo 설치</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-blog-init"><span class="toc-number">4.</span> <span class="toc-text">hexo blog init</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-실행"><span class="toc-number">5.</span> <span class="toc-text">hexo 실행</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#새로운-테마-적용"><span class="toc-number">6.</span> <span class="toc-text">새로운 테마 적용</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM-JRE-JDK-관계"><span class="toc-number">2.</span> <span class="toc-text">JVM, JRE, JDK 관계</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM"><span class="toc-number">3.</span> <span class="toc-text">JVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JRE"><span class="toc-number">4.</span> <span class="toc-text">JRE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK"><span class="toc-number">5.</span> <span class="toc-text">JDK</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

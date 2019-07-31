@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2019/07/31/01-java-jdk/</loc>
+        <lastmod>2019-07-31T08:44:38.536Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2019/07/30/00-hexo-blog/</loc>
         <lastmod>2019-07-30T08:57:27.436Z</lastmod>
         <changefreq>weekly</changefreq>
