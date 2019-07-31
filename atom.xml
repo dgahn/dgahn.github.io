@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-31T08:55:03.971Z</updated>
+  <updated>2019-07-31T13:58:44.508Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java - 변수(Primitive)와 메모리 사용</title>
+    <link href="http://yoursite.com/2019/07/31/02-java-variable/"/>
+    <id>http://yoursite.com/2019/07/31/02-java-variable/</id>
+    <published>2019-07-31T13:58:44.508Z</published>
+    <updated>2019-07-31T13:58:44.508Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>회사에서 lombok을 쓰다보니 원시 타입을 잘 사용하지 않아 생각이 나질 않는다. 한번 정리할 겸 해서 블로그에 올려본다.</p><br><h2 id="종류"><a href="#종류" class="headerlink" title="종류"></a>종류</h2><p>Java의 Primitive(원시)타입은 총 8가지가 있다.</p><table><thead><tr><th align="center">기본 타입</th><th align="center">메모리 사용 크기</th></tr></thead><tbody><tr><td align="center">byte</td><td align="center">1 byte / 8 bit</td></tr><tr><td align="center">char</td><td align="center">2 byte / 16 bit</td></tr><tr><td align="center">short</td><td align="center">2 byte / 16 bit</td></tr><tr><td align="center">int</td><td align="center">4 byte / 32 bit</td></tr><tr><td align="center">long</td><td align="center">8 byte / 64 bit</td></tr><tr><td align="center">float</td><td align="center">4 byte / 32 bit</td></tr><tr><td align="center">double</td><td align="center">8 byte / 64 bit</td></tr><tr><td align="center">boolean</td><td align="center">1 byte / 8 bit</td></tr></tbody></table><br><h2 id="메모리-사용"><a href="#메모리-사용" class="headerlink" title="메모리 사용"></a>메모리 사용</h2><p>모든 프로그램은 아래와 같은 방식으로 메모리를 분리해서 사용한다.</p><p><img src="https://i.imgur.com/tHgmkma.png" alt="2"></p><p><strong>Java</strong>는 데이터 저장 영역을 아래와 같이 더 분류한다.</p><p><img src="https://i.imgur.com/bpzBCzb.png" alt="1"></p><p>Primitive 타입의 변수들은 스택 영역에 값이 직접 할당된다. 그래서 변수를 어떤 타입으로 선언했냐에 따라 이 스택 영역에 해당 변수가 얼마나 많은 크기를 사용하냐가 결정된다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;서론&quot;&gt;&lt;a href=&quot;#서론&quot; class=&quot;headerlink&quot; title=&quot;서론&quot;&gt;&lt;/a&gt;서론&lt;/h2&gt;&lt;p&gt;회사에서 lombok을 쓰다보니 원시 타입을 잘 사용하지 않아 생각이 나질 않는다. 한번 정리할 겸 해서 블로그에 올려본다.&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Java - 자바 개발 환경</title>
