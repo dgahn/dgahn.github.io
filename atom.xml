@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-31T14:05:26.361Z</updated>
+  <updated>2019-07-31T14:06:27.843Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Java - 자바 개발 환경</title>
-    <link href="http://yoursite.com/2019/07/31/01-java-jdk/"/>
-    <id>http://yoursite.com/2019/07/31/01-java-jdk/</id>
-    <published>2019-07-31T14:05:26.361Z</published>
-    <updated>2019-07-31T14:05:26.361Z</updated>
+    <title>Java - 변수(Primitive)와 메모리 사용</title>
+    <link href="http://yoursite.com/2019/07/31/02-java-variable/"/>
+    <id>http://yoursite.com/2019/07/31/02-java-variable/</id>
+    <published>2019-07-31T14:06:27.843Z</published>
+    <updated>2019-07-31T14:06:27.843Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>자바의 가장 큰 장점 중의 하나는 “Write once, run anywhere.(한 번 작성하면 어디서든 실행된다.)” 이다. 이 것을 가능하게 해주는 것은 자바가 가지는 특별한 개발 환경 덕분이다. 자바의 세계는 아래와 같은 3가지 도구로 구성되어 있다.</p><ul><li><p>JVM(Java Virtual Machine) : 자바 가상 기계</p></li><li><p>JRE(Java Runtime Environment) : 자바 실행 환경</p></li><li><p>JDK(Java Development Kit) : 자바 개발 도구</p></li></ul><h2 id="JVM-JRE-JDK-관계"><a href="#JVM-JRE-JDK-관계" class="headerlink" title="JVM, JRE, JDK 관계"></a>JVM, JRE, JDK 관계</h2><ul><li><p>JRE = JVM + 표준 클래스 라이브러리</p></li><li><p>JDK = JRE + 개발에 필요한 도구</p></li></ul><h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>JVM은 컴퓨터로 따지면 물리적인 기계에 해당한다. 자바가 실행할 수 있도록 가상의 공간을 내 컴퓨터에 할당한다. Java 소스 코드를 javac 컴파일러를 통해서 컴파일을 하면 바이트 코드로 변환이 되는데 이 때, 이 바이트 코드를 JVM이 JIT 컴파일 방식으로 코드를 실행한다. (JIT: 실행하는 부분만 필요한 시점에 컴파일 하는 방식)</p><h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>Java Runtime Environment. 말 그대로 자바를 실행할 수 있는 환경을 제공해준다. 예를 들어, 바이트 코드로 전환된 코드를 JVM에게 전달(적재)하는 역할을 JRE에 있는 Java class loader가 해준다.</p><h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JRE, Java 바이트 코드 컴파일러, Java 디버거등으로 구성되어 있다. 실제로 Java를 통해서 개발을 할 때 필요한 도구등을 제공해준다. 간단하게 생각하면 System.out.println()이 JDK에서 제공하는 표준 라이브러리 중 하나인 java.lang에 속한 메소드 중 하나이다.</p><p>참고 자료</p><ul><li><a href="https://wikibook.co.kr/java-oop-for-spring/" rel="external nofollow noopener noreferrer" target="_blank">스프링 입문을 위한 자바 객체 지향의 원리와 이해</a> </li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>회사에서 lombok을 쓰다보니 원시 타입을 잘 사용하지 않아 생각이 나질 않는다. 한번 정리할 겸 해서 블로그에 올려본다.</p><br><h2 id="종류"><a href="#종류" class="headerlink" title="종류"></a>종류</h2><p>Java의 Primitive(원시)타입은 총 8가지가 있다.</p><table><thead><tr><th align="center">기본 타입</th><th align="center">메모리 사용 크기</th></tr></thead><tbody><tr><td align="center">byte</td><td align="center">1 byte / 8 bit</td></tr><tr><td align="center">char</td><td align="center">2 byte / 16 bit</td></tr><tr><td align="center">short</td><td align="center">2 byte / 16 bit</td></tr><tr><td align="center">int</td><td align="center">4 byte / 32 bit</td></tr><tr><td align="center">long</td><td align="center">8 byte / 64 bit</td></tr><tr><td align="center">float</td><td align="center">4 byte / 32 bit</td></tr><tr><td align="center">double</td><td align="center">8 byte / 64 bit</td></tr><tr><td align="center">boolean</td><td align="center">1 byte / 8 bit</td></tr></tbody></table><br><h2 id="메모리-사용"><a href="#메모리-사용" class="headerlink" title="메모리 사용"></a>메모리 사용</h2><p>모든 프로그램은 아래와 같은 방식으로 메모리를 분리해서 사용한다.</p><p><img src="https://i.imgur.com/tHgmkma.png" alt="2"></p><p><strong>Java</strong>는 데이터 저장 영역을 아래와 같이 더 분류한다.</p><p><img src="https://i.imgur.com/bpzBCzb.png" alt="1"></p><p>Primitive 타입의 변수들은 스택 영역에 값이 직접 할당된다. 그래서 변수를 어떤 타입으로 선언했냐에 따라 이 스택 영역에 해당 변수가 얼마나 많은 크기를 사용하냐가 결정된다.</p><p>참고 자료</p><ul><li><a href="https://wikibook.co.kr/java-oop-for-spring/" rel="external nofollow noopener noreferrer" target="_blank">스프링 입문을 위한 자바 객체 지향의 원리와 이해</a> </li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;서론&quot;&gt;&lt;a href=&quot;#서론&quot; class=&quot;headerlink&quot; title=&quot;서론&quot;&gt;&lt;/a&gt;서론&lt;/h2&gt;&lt;p&gt;자바의 가장 큰 장점 중의 하나는 “Write once, run anywhere.(한 번 작성하면 어디서든 실행된다.)” 이다
+        &lt;h2 id=&quot;서론&quot;&gt;&lt;a href=&quot;#서론&quot; class=&quot;headerlink&quot; title=&quot;서론&quot;&gt;&lt;/a&gt;서론&lt;/h2&gt;&lt;p&gt;회사에서 lombok을 쓰다보니 원시 타입을 잘 사용하지 않아 생각이 나질 않는다. 한번 정리할 겸 해서 블로그에 올려본다.&lt;
       
     
     </summary>
@@ -38,19 +38,19 @@
   </entry>
   
   <entry>
-    <title>Java - 변수(Primitive)와 메모리 사용</title>
-    <link href="http://yoursite.com/2019/07/31/02-java-variable/"/>
-    <id>http://yoursite.com/2019/07/31/02-java-variable/</id>
-    <published>2019-07-31T14:05:03.685Z</published>
-    <updated>2019-07-31T14:05:03.685Z</updated>
+    <title>Java - 자바 개발 환경</title>
+    <link href="http://yoursite.com/2019/07/31/01-java-jdk/"/>
+    <id>http://yoursite.com/2019/07/31/01-java-jdk/</id>
+    <published>2019-07-31T14:06:22.272Z</published>
+    <updated>2019-07-31T14:06:22.272Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>회사에서 lombok을 쓰다보니 원시 타입을 잘 사용하지 않아 생각이 나질 않는다. 한번 정리할 겸 해서 블로그에 올려본다.</p><br><h2 id="종류"><a href="#종류" class="headerlink" title="종류"></a>종류</h2><p>Java의 Primitive(원시)타입은 총 8가지가 있다.</p><table><thead><tr><th align="center">기본 타입</th><th align="center">메모리 사용 크기</th></tr></thead><tbody><tr><td align="center">byte</td><td align="center">1 byte / 8 bit</td></tr><tr><td align="center">char</td><td align="center">2 byte / 16 bit</td></tr><tr><td align="center">short</td><td align="center">2 byte / 16 bit</td></tr><tr><td align="center">int</td><td align="center">4 byte / 32 bit</td></tr><tr><td align="center">long</td><td align="center">8 byte / 64 bit</td></tr><tr><td align="center">float</td><td align="center">4 byte / 32 bit</td></tr><tr><td align="center">double</td><td align="center">8 byte / 64 bit</td></tr><tr><td align="center">boolean</td><td align="center">1 byte / 8 bit</td></tr></tbody></table><br><h2 id="메모리-사용"><a href="#메모리-사용" class="headerlink" title="메모리 사용"></a>메모리 사용</h2><p>모든 프로그램은 아래와 같은 방식으로 메모리를 분리해서 사용한다.</p><p><img src="https://i.imgur.com/tHgmkma.png" alt="2"></p><p><strong>Java</strong>는 데이터 저장 영역을 아래와 같이 더 분류한다.</p><p><img src="https://i.imgur.com/bpzBCzb.png" alt="1"></p><p>Primitive 타입의 변수들은 스택 영역에 값이 직접 할당된다. 그래서 변수를 어떤 타입으로 선언했냐에 따라 이 스택 영역에 해당 변수가 얼마나 많은 크기를 사용하냐가 결정된다.</p><p>참고 자료</p><ul><li><a href="http://www.hanbit.co.kr/store/books/look.php?p_code=B1460673937" rel="external nofollow noopener noreferrer" target="_blank">이것이 자바다.</a>   </li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>자바의 가장 큰 장점 중의 하나는 “Write once, run anywhere.(한 번 작성하면 어디서든 실행된다.)” 이다. 이 것을 가능하게 해주는 것은 자바가 가지는 특별한 개발 환경 덕분이다. 자바의 세계는 아래와 같은 3가지 도구로 구성되어 있다.</p><ul><li><p>JVM(Java Virtual Machine) : 자바 가상 기계</p></li><li><p>JRE(Java Runtime Environment) : 자바 실행 환경</p></li><li><p>JDK(Java Development Kit) : 자바 개발 도구</p></li></ul><h2 id="JVM-JRE-JDK-관계"><a href="#JVM-JRE-JDK-관계" class="headerlink" title="JVM, JRE, JDK 관계"></a>JVM, JRE, JDK 관계</h2><ul><li><p>JRE = JVM + 표준 클래스 라이브러리</p></li><li><p>JDK = JRE + 개발에 필요한 도구</p></li></ul><h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>JVM은 컴퓨터로 따지면 물리적인 기계에 해당한다. 자바가 실행할 수 있도록 가상의 공간을 내 컴퓨터에 할당한다. Java 소스 코드를 javac 컴파일러를 통해서 컴파일을 하면 바이트 코드로 변환이 되는데 이 때, 이 바이트 코드를 JVM이 JIT 컴파일 방식으로 코드를 실행한다. (JIT: 실행하는 부분만 필요한 시점에 컴파일 하는 방식)</p><h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>Java Runtime Environment. 말 그대로 자바를 실행할 수 있는 환경을 제공해준다. 예를 들어, 바이트 코드로 전환된 코드를 JVM에게 전달(적재)하는 역할을 JRE에 있는 Java class loader가 해준다.</p><h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JRE, Java 바이트 코드 컴파일러, Java 디버거등으로 구성되어 있다. 실제로 Java를 통해서 개발을 할 때 필요한 도구등을 제공해준다. 간단하게 생각하면 System.out.println()이 JDK에서 제공하는 표준 라이브러리 중 하나인 java.lang에 속한 메소드 중 하나이다.</p><p>참고 자료</p><ul><li><a href="https://namu.wiki/w/Java%20Virtual%20Machine" rel="external nofollow noopener noreferrer" target="_blank">https://namu.wiki/w/Java%20Virtual%20Machine</a></li><li><a href="https://wikibook.co.kr/java-oop-for-spring/" rel="external nofollow noopener noreferrer" target="_blank">이것이 자바다.</a> </li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;서론&quot;&gt;&lt;a href=&quot;#서론&quot; class=&quot;headerlink&quot; title=&quot;서론&quot;&gt;&lt;/a&gt;서론&lt;/h2&gt;&lt;p&gt;회사에서 lombok을 쓰다보니 원시 타입을 잘 사용하지 않아 생각이 나질 않는다. 한번 정리할 겸 해서 블로그에 올려본다.&lt;
+        &lt;h2 id=&quot;서론&quot;&gt;&lt;a href=&quot;#서론&quot; class=&quot;headerlink&quot; title=&quot;서론&quot;&gt;&lt;/a&gt;서론&lt;/h2&gt;&lt;p&gt;자바의 가장 큰 장점 중의 하나는 “Write once, run anywhere.(한 번 작성하면 어디서든 실행된다.)” 이다
       
     
     </summary>
