@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2019/07/30/00-hexo-blog/</loc>
+        <lastmod>2019-08-04T10:37:17.675Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2019/07/31/02-java-variable/</loc>
         <lastmod>2019-07-31T14:06:27.843Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,14 +26,6 @@
     <url>
         <loc>http://yoursite.com/2019/07/31/01-java-jdk/</loc>
         <lastmod>2019-07-31T14:06:22.272Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2019/07/30/00-hexo-blog/</loc>
-        <lastmod>2019-07-30T08:57:27.436Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
