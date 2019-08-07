@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang>
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="안덕기">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="안덕기">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Java - 객체 지향 프로그래밍 · dgahn&#39;s의 개발 블로그</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.png">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">dgahn&#39;s의 개발 블로그</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Java - 객체 지향 프로그래밍</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">dgahn's의 개발 블로그</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Java - 객체 지향 프로그래밍
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>글자수: <span class="post-count word-count">785</span>읽는 시간: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/08/07</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;">
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>나는 프로그래밍을 대학교에서 C언어로 처음 접했다. 그리고 다음으로 객체 지향 언어라고 불리는 자바를 접하게 되었는데 객체 지향이라는 말이 무엇인지 자바 수업이 끝날 때까지 이해하지 못하였다. 그리고 훗날 세미나를 하면서 객체 지향이라는 것에 대해서 관심을 갖게 된 이유는 내가 만든 프로그램을 수정하면서 너무 많은 것을 변경해야되면서 관심을 갖게 되었다. 객체 지향적으로 설계하는 것이 얼마나 중요한지를 코드를 작성하면서 깨달았다… 아직은 객체지향적인 설계를 하진 못하지만 ^^.. 객체지향의 특징에 대해서 다시한번 정리하려고 한다. </p>
+<br>
+
+<h2 id="절차-지향-VS-객체-지향"><a href="#절차-지향-VS-객체-지향" class="headerlink" title="절차 지향 VS 객체 지향"></a>절차 지향 VS 객체 지향</h2><p>먼저, 주의해야할 점이 있다. 절차 지향과 객체 지향은 상반된 개념이 아니다. 즉, 절차 지향의 반대가 객체 지향이 아니고 객체 지향의 반대가 절차 지향은 아니다. 그저 바라보는 관점이 다른 것이다. <strong>절차 지향의 경우 순서와 흐름을 먼저 설계하고 자료구조와 함수들을 설계</strong>하는 방식이고 <strong>객체 지향의 경우 자료구조와 함수들을 먼저 설계하고 순서와 흐름을 설계</strong>하는 방식이다. 그렇기 때문에 완전히 다른 방식이 아니라 중점을 어디에 두었냐를 생각해야한다.</p>
+<br>
+
+<h2 id="객체-지향-프로그래밍의-특징"><a href="#객체-지향-프로그래밍의-특징" class="headerlink" title="객체 지향 프로그래밍의 특징"></a>객체 지향 프로그래밍의 특징</h2><p>객체 지향 프로그램의 가장 큰 장점은 <strong>유지 보수가 용이</strong> 하다는 것이다. 그 이유는 해당 프로그램이 객체 지향적으로 설계된 프로그램이라면 자료구조와 메소드들을 분리할 수 있는 형태로 먼저 설계를 했기 때문에 다른 것으로 대체할 수 있기 때문이다. </p>
+<p>하지만 그에 비해 좋은 설계를 하기 위해서는 많은 시간이 필요하고 객체를 별도로 생성하기 때문에 메모리도 많이 사용하며 여러가지 객체들이 복합적으로 처리하는 것들이 많기 때문에 절차지향에 비해 실제 컴퓨터가 처리하는 시간도 많이 걸린다.</p>
+<br>
+
+<h3 id="객체-지향의-장점"><a href="#객체-지향의-장점" class="headerlink" title="객체 지향의 장점"></a>객체 지향의 장점</h3><ul>
+<li>유지 보수가 용이하다.</li>
+</ul>
+<h3 id="객체-지향의-단점"><a href="#객체-지향의-단점" class="headerlink" title="객체 지향의 단점"></a>객체 지향의 단점</h3><ul>
+<li><p>좋은 설계를 하기 위한 시간과 노력이 많이 필요하다.</p>
+</li>
+<li><p>메모리를 많이 차지한다.</p>
+</li>
+<li><p>컴퓨터의 실제 처리시간이 비교적 오래 걸린다.     </p>
+</li>
+</ul>
+<br>
+
+<h2 id="객체-지향의-3가지-요소"><a href="#객체-지향의-3가지-요소" class="headerlink" title="객체 지향의 3가지 요소"></a>객체 지향의 3가지 요소</h2><p>객체 지향 프로그램을 하는데 있어서 중요시 여기는 3가지 요소가 있다. <strong>캡슐화, 상속, 다형성</strong>인데 각각의 특징이 어떤 것을 의미하는지 정리해보자.</p>
+<br>
+
+<h3 id="캡슐화"><a href="#캡슐화" class="headerlink" title="캡슐화"></a>캡슐화</h3><p>캡슐화는 <strong>객체의 내부 구현 내용을 숨기는 것</strong>이다. 숨기는 이유는 간단하다. 객체를 <strong>손상</strong>되지 않도록 하는 것이다. 자바에서는 객체의 필드와 메소드를 묶어서 사용을 많이 하는데 자바에서 말하는 POJO(Plain Old Java Object)가 바로 그 예시이다. POJO의 예시는 아래와 같다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> b;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">  &#125; </span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setB</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.b = b;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>POJO처럼 필드와 메소드를 묶어서 <strong>a</strong> 클래스가 가진 필드 <strong>b</strong> 숨기면 항상 <strong>setB</strong>로 <strong>b</strong>의 값을 변경해야한다. 이렇게 필드를 숨기는 것도 캡슐화의 일종이다. 아래 코드를 보자.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  .. 생략</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (b &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.initB()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">void</span> initB &#123;</span><br><span class="line">    b = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .. 생략</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>만약 <strong>b</strong>가 음수라면 <strong>b</strong>를 음수로 초기화해야하는 로직이 있어야한다고 가정하자. 그리고 그 로직을 별도의 메소드로 작성했다고 하고 외부에서는 그 메소드를 호출할 필요가 없다고 하면 위와 같이 접근 제한자로 객체의 기능을 숨길 수가 있다. 그러면 외부에서는 함부로 필드 <strong>b</strong>를 초기화할 수가 없을 것이다.</p>
+<p>이렇게 객체을 손상시키지 않기 위해서 외부에 필드나 메소드를 은닉하는 행위를 <strong>캡슐화</strong>라고 부른다.</p>
+<br>
+
+<h3 id="상속"><a href="#상속" class="headerlink" title="상속"></a>상속</h3><p>상속은 이미 구현되어 있는 기능(필드 또는 메소드)을 다른 객체가 그대로 사용하거나 변형해서 사용할 수 있도록 해주는 기능이다. 그렇기 때문에 상위 객체(상속을 해주는 객체)의 기능을 이어 받은 하위 객체(상속을 받는 객체)를 작성하는 것이 아예 새로 작성하는 것보다 더 적인 노력이 든다.</p>
+<h4 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h4><p>하위 객체가 생성할 때는 상위 객체가 미리 생성이 되어야 한다. 자바에서는 <strong>primitive</strong> 타입을 제외한 타입을 <strong>Heap</strong> 영역에 생성되는데 하위 객체의 생성자를 호출하면 상위 객체의 생성자도 호출되기 때문에 상위 객체가 <strong>Heap</strong>영역에 같이 생성이 된다. (단, 이는 기본 생성자에서 자동으로 상위 객체의 기본 생성자를 불러와주는 것이다. 만약 별도로 만든 생성자라면 해당 생성자 첫 줄에 <strong>super()</strong> 를 통해서 상위 객체의 생성자를 호출해야한다.)</p>
+<br>
+
+<h3 id="다형성"><a href="#다형성" class="headerlink" title="다형성"></a>다형성</h3><p>다형성은 선언한 메소드나 클래스를 다양한 방법으로 동작시키는 것을 의미한다. 아래를 보자. </p>
+<h4 id="1-상속을-이용한-다형성-활용"><a href="#1-상속을-이용한-다형성-활용" class="headerlink" title="1.상속을 이용한 다형성 활용"></a>1.상속을 이용한 다형성 활용</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span> </span>&#123;</span><br><span class="line"><span class="comment">//  private A a = new A();</span></span><br><span class="line">    <span class="keyword">private</span> A a = <span class="keyword">new</span> B();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위와 같이 상속이나 인터페이스를 이용하여 하나의 클래스에 서로 다른 객체를 할당해서 사용할 수 있다. 그러면 <strong>A</strong> 객체를 할당 했을 때는 <strong>a.get1()</strong> 을 호출해서 사용할 수 있고, <strong>B</strong> 객체를 할당 했을 때는 <strong>a.get1()</strong> 또는 <strong>a.get2()</strong> 을 호출하여 사용할 수 있다. 그러므로 A 클래스를 여러가지 방법으로 동작시킬 수 있다.</p>
+<h4 id="2-Override을-이용한-다형성-활용"><a href="#2-Override을-이용한-다형성-활용" class="headerlink" title="2.@Override을 이용한 다형성 활용"></a>2.@Override을 이용한 다형성 활용</h4><p>@Override를 활용하면 <strong>메소드를 재정의</strong>할 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span> </span>&#123;</span><br><span class="line"><span class="comment">//  private A a = new A();</span></span><br><span class="line">    <span class="keyword">private</span> A a = <span class="keyword">new</span> B();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>그러므로 <strong>A</strong> 객체를 할당하느냐 <strong>B</strong> 객체를 할당하느냐에 따라 <strong>a.get()</strong> 를 다르게 사용할 수 있다.</p>
+<h4 id="3-Overloading을-이용한-다형성-활용"><a href="#3-Overloading을-이용한-다형성-활용" class="headerlink" title="3.Overloading을 이용한 다형성 활용"></a>3.Overloading을 이용한 다형성 활용</h4><p>오버로딩을 활용하면 <strong>메소드의 이름을 중복</strong>해서 사용할수 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">final</span> String x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">final</span> String x, <span class="keyword">final</span> String y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>조건은 아래와 같다.</p>
+<ul>
+<li><p>메소드의 이름은 같아야 한다.</p>
+</li>
+<li><p>반환형은 달라도 된다.</p>
+</li>
+<li><p>파라미터의 갯수나 자료형이 달라야한다.</p>
+</li>
+</ul>
+<p>참고 자료</p>
+<ul>
+<li><a href="https://wikibook.co.kr/java-oop-for-spring/" rel="external nofollow noopener noreferrer" target="_blank">이것이 자바다.</a> </li>
+<li><a href="https://m.blog.naver.com/atalanta16/220249264429" rel="external nofollow noopener noreferrer" target="_blank">스파게티 코드님 블로그</a></li>
+</ul>
+
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/07/31/02-java-variable/" title="Java - 변수(Primitive)와 메모리 사용">
+                    <div class="prevTitle">Java - 변수(Primitive)와 메모리 사용</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "http://yoursite.com/2019/08/07/03-java-oop/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "Java - 객체 지향 프로그래밍"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://dgahn.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by Disqus.</a></noscript>
+
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:dgahn@icloud.com" class="iconfont-archer email" title="email" rel="external nofollow noopener noreferrer" target="_blank"></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/dgahn" class="iconfont-archer github" target="_blank" title="github" rel="external nofollow noopener noreferrer"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.facebook.com/duckgi.an.1" class="iconfont-archer facebook" target="_blank" title="facebook" rel="external nofollow noopener noreferrer"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank" rel="external nofollow noopener noreferrer">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style="top:50vh;">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#절차-지향-VS-객체-지향"><span class="toc-number">2.</span> <span class="toc-text">절차 지향 VS 객체 지향</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#객체-지향-프로그래밍의-특징"><span class="toc-number">3.</span> <span class="toc-text">객체 지향 프로그래밍의 특징</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#객체-지향의-장점"><span class="toc-number">3.1.</span> <span class="toc-text">객체 지향의 장점</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#객체-지향의-단점"><span class="toc-number">3.2.</span> <span class="toc-text">객체 지향의 단점</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#객체-지향의-3가지-요소"><span class="toc-number">4.</span> <span class="toc-text">객체 지향의 3가지 요소</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#캡슐화"><span class="toc-number">4.1.</span> <span class="toc-text">캡슐화</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#상속"><span class="toc-number">4.2.</span> <span class="toc-text">상속</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#참고"><span class="toc-number">4.2.1.</span> <span class="toc-text">참고</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#다형성"><span class="toc-number">4.3.</span> <span class="toc-text">다형성</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-상속을-이용한-다형성-활용"><span class="toc-number">4.3.1.</span> <span class="toc-text">1.상속을 이용한 다형성 활용</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Override을-이용한-다형성-활용"><span class="toc-number">4.3.2.</span> <span class="toc-text">2.@Override을 이용한 다형성 활용</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Overloading을-이용한-다형성-활용"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.Overloading을 이용한 다형성 활용</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 4
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/08/07/03-java-oop/">Java - 객체 지향 프로그래밍</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/31</span><a class="archive-post-title" href="/2019/07/31/01-java-jdk/">Java - 자바 개발 환경</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/30</span><a class="archive-post-title" href="/2019/07/30/00-hexo-blog/">Hexo로 블로그 만들기</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/07/31/02-java-variable/">Java - 변수(Primitive)와 메모리 사용</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "안덕기"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
