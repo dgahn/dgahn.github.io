@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Java - 자바 개발 환경 · dgahn&#39;s의 개발 블로그</title>
+    <title>Java - 추상 클래스와 인터페이스 · dgahn&#39;s의 개발 블로그</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">dgahn&#39;s의 개발 블로그</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Java - 자바 개발 환경</a>
+                <a href="#" class="post-name">Java - 추상 클래스와 인터페이스</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Java - 자바 개발 환경
+            Java - 추상 클래스와 인터페이스
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>글자수: <span class="post-count word-count">200</span>읽는 시간: <span class="post-count reading-time">1 min</span></span>
+                        <span>글자수: <span class="post-count word-count">388</span>읽는 시간: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/07/31</span>
+                    <span class="post-intro-time">2019/08/08</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,29 +395,36 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>자바의 가장 큰 장점 중의 하나는 “Write once, run anywhere.(한 번 작성하면 어디서든 실행된다.)” 이다. 이 것을 가능하게 해주는 것은 자바가 가지는 특별한 개발 환경 덕분이다. 자바의 세계는 아래와 같은 3가지 도구로 구성되어 있다.</p>
-<ul>
-<li><p>JVM(Java Virtual Machine) : 자바 가상 기계</p>
+        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>신입 면접 질문 목록을 보면 추상 클래스와 인터페이스에 대해서 묻는 경우가 많다. 나는 추상 클래스는 거의 사용해본적이 없고 인터페이스를 만들고 나서 해당 인터페이스의 명세를 구현하는 경우만 많았다. 왜 그것들을 사용하지는에 대해서 이번 기회에 정리하면 좋겠다고 생각이 들어서 정리를 해본다.</p>
+<br>
+
+<h2 id="추상화"><a href="#추상화" class="headerlink" title="추상화"></a>추상화</h2><p>추상클래스와 인터페이스를 이야기하기 전에 추상화에 대해서 이야기하는 것이 좋을 듯하다. <a href="https://dgahn.github.io/2019/08/07/03-java-oop/" rel="external nofollow noopener noreferrer" target="_blank">Java-객체 지향 프로그래밍</a>에서 이야기 했지만 객체 지향 프로그래밍은 자료구조와 데이터에 대해서 먼저 설계를 하고 흐름에 따라서 코드를 작성한다. 이 때, 자료구조와 함수에 대해서 설계를 할 때 <strong>특정 사물에 대해서 공통적인 속성 또는 기능을 정의하는 행위</strong>를 <strong>추상화</strong>라고 한다. </p>
+<p>추상화를 통해서 우리는 객체를 정의할 수 있는데 추상화 과정에서 <strong>비슷 기능이지만 결과나 구현 내용이 다른 경우</strong>가 있다. 이런 경우, 공통적인 속성 또는 기능등을 추상클래스 또는 인터페이스로 선언을 하고 사용할 수 있다.</p>
+<br>
+
+<h2 id="추상-클래스"><a href="#추상-클래스" class="headerlink" title="추상 클래스"></a>추상 클래스</h2><p>추상 클래스는 실제 <strong>클래스</strong>이다. 다만, 이 추상 클래스를 상속 받는 하위 클래스가 추상 클래스에서 선언한 추상 메소드들을 보고 반드시 <strong>Overridng</strong> 해야하는 메소드가 무엇인지 알 수 있다. 그렇기 때문에 우리는 추상클래스를 사용하면 일반 클래스처럼 사용하고 하위 클래스가 구현해야되는 기능들을 명시할 수 있다. 그리고 일반 클래스처럼 변수를 선언할 수 있기 때문에 하위 클래스가 해당 변수를 선언하지 않아도 추상 클래스를 통해서 하위 클래스에서 사용할 수 있다.</p>
+<br>
+
+<h2 id="인터페이스"><a href="#인터페이스" class="headerlink" title="인터페이스"></a>인터페이스</h2><p>인터페이스는 인터페이스를 구현할 구현체가 구현할 기능등을 명세해놓는다. 하지만 변수가 아닌 상수들만 선언할 수 있다. 자바 8 이전 버전에서는 인터페이스에서는 추상 메소드만 선언할 수 있었지만 자바 8 이후부터는 디폴트 메소드, 정적 메소드를 모두 선언해서 사용할 수 있다. 그렇기 때문에 추상 클래스처럼 유사하게 사용할 수 있게 되었다.</p>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>추상 클래스와 인터페이스는 어떤 사물을 추상화하여 여러가지 방법으로 사용하는 것(다형성)을 고려할 때 쓰인다. 그렇기 때문에 너무나 비슷한 것 같은데 무슨 차이가 있을까? 마지막으로 아래에서 공통점과 차이점에 대해서 나열하는 것으로 마무리 하도록 하겠다.</p>
+<h3 id="공통점"><a href="#공통점" class="headerlink" title="공통점"></a>공통점</h3><ul>
+<li><p>추상 메소드, 디폴트 메소드, 정적 메소드를 선언할 수 있다.</p>
 </li>
-<li><p>JRE(Java Runtime Environment) : 자바 실행 환경</p>
-</li>
-<li><p>JDK(Java Development Kit) : 자바 개발 도구</p>
+<li><p>해당 클래스를 직접 사용하기보단 별도의 클래스를 상속 또는 구현해서 사용한다.</p>
 </li>
 </ul>
-<h2 id="JVM-JRE-JDK-관계"><a href="#JVM-JRE-JDK-관계" class="headerlink" title="JVM, JRE, JDK 관계"></a>JVM, JRE, JDK 관계</h2><ul>
-<li><p>JRE = JVM + 표준 클래스 라이브러리</p>
+<h3 id="차이점"><a href="#차이점" class="headerlink" title="차이점"></a>차이점</h3><ul>
+<li><p>인터페이스는 객체화할 수 없다. (추상 클래스는 객체화가 가능하다.)</p>
 </li>
-<li><p>JDK = JRE + 개발에 필요한 도구</p>
+<li><p>인터페이스는 변수를 가질 수 없고 상수만 가질 수 있다. (추상 클래스는 변수를 가질 수 있다.)</p>
+</li>
+<li><p>추상 클래스는 다중 상속이 불가능하다. (인터페이스는 해당 구현체가 여러개의 인터페이스를 구현할 수 있다.)</p>
 </li>
 </ul>
-<h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>JVM은 컴퓨터로 따지면 물리적인 기계에 해당한다. 자바가 실행할 수 있도록 가상의 공간을 내 컴퓨터에 할당한다. Java 소스 코드를 javac 컴파일러를 통해서 컴파일을 하면 바이트 코드로 변환이 되는데 이 때, 이 바이트 코드를 JVM이 JIT 컴파일 방식으로 코드를 실행한다. (JIT: 실행하는 부분만 필요한 시점에 컴파일 하는 방식)</p>
-<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>Java Runtime Environment. 말 그대로 자바를 실행할 수 있는 환경을 제공해준다. 예를 들어, 바이트 코드로 전환된 코드를 JVM에게 전달(적재)하는 역할을 JRE에 있는 Java class loader가 해준다.</p>
-<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JRE, Java 바이트 코드 컴파일러, Java 디버거등으로 구성되어 있다. 실제로 Java를 통해서 개발을 할 때 필요한 도구등을 제공해준다. 간단하게 생각하면 System.out.println()이 JDK에서 제공하는 표준 라이브러리 중 하나인 java.lang에 속한 메소드 중 하나이다.</p>
-<p>참고 자료</p>
-<ul>
-<li><a href="https://namu.wiki/w/Java%20Virtual%20Machine" rel="external nofollow noopener noreferrer" target="_blank">https://namu.wiki/w/Java%20Virtual%20Machine</a></li>
-<li><a href="https://wikibook.co.kr/java-oop-for-spring/" rel="external nofollow noopener noreferrer" target="_blank">이것이 자바다.</a> </li>
-</ul>
+<p>그렇기 때문에 내가 내린 결론은 아래와 같다.</p>
+<h3 id="사용-용도"><a href="#사용-용도" class="headerlink" title="사용 용도"></a>사용 용도</h3><p>추상 클래스 : 공통적으로 사용할 변수가 있고 추상화 한번에 모든 것이 추상화가 해결된다면 추상 클래스를 사용하는 것이 적합하다.</p>
+<p>인터페이스 : 공통적으로 사용할 상수만 있고 추상화 단계가 복잡하여 구현체가 여러가지를 구현해야하는 경우 사용하는 것이 적합해보인다.</p>
+<p>자바의 대표적인 프레임워크인 스프링 코드를 어설프게 봤을 때는 구현해야하는 클래스에 추상화한 클래스나 인터페이스가 가진 변수를 사용해야하는 경우에는 추상 클래스를 사용하고 어떤 기능에 대해서 명세만 하는 경우에는 인터페이스를 사용하는 것 같다. </p>
 
     </article>
     <!-- license  -->
@@ -426,17 +433,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/07/31/02-java-variable/" title="Java - 변수(Primitive)와 메모리 사용">
-                    <div class="nextTitle">Java - 변수(Primitive)와 메모리 사용</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/07/30/00-hexo-blog/" title="Hexo로 블로그 만들기">
-                    <div class="prevTitle">Hexo로 블로그 만들기</div>
+                <a href="/2019/08/07/03-java-oop/" title="Java - 객체 지향 프로그래밍">
+                    <div class="prevTitle">Java - 객체 지향 프로그래밍</div>
                 </a>
             
         </li>
@@ -453,8 +455,8 @@ height:50vh;
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
         var disqus_config = function () {
-        this.page.url = "http://yoursite.com/2019/07/31/01-java-jdk/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "Java - 자바 개발 환경"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://yoursite.com/2019/08/08/04-java-abstraction/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "Java - 추상 클래스와 인터페이스"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
         (function () { // DON'T EDIT BELOW THIS LINE
@@ -560,7 +562,7 @@ height:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM-JRE-JDK-관계"><span class="toc-number">2.</span> <span class="toc-text">JVM, JRE, JDK 관계</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM"><span class="toc-number">3.</span> <span class="toc-text">JVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JRE"><span class="toc-number">4.</span> <span class="toc-text">JRE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK"><span class="toc-number">5.</span> <span class="toc-text">JDK</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#추상화"><span class="toc-number">2.</span> <span class="toc-text">추상화</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#추상-클래스"><span class="toc-number">3.</span> <span class="toc-text">추상 클래스</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#인터페이스"><span class="toc-number">4.</span> <span class="toc-text">인터페이스</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#결론"><span class="toc-number">5.</span> <span class="toc-text">결론</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#공통점"><span class="toc-number">5.1.</span> <span class="toc-text">공통점</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#차이점"><span class="toc-number">5.2.</span> <span class="toc-text">차이점</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#사용-용도"><span class="toc-number">5.3.</span> <span class="toc-text">사용 용도</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
