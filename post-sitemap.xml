@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2019/08/13/06-java-solid-2/</loc>
+        <lastmod>2019-08-13T14:59:27.257Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2019/08/12/05-java-solid-1/</loc>
-        <lastmod>2019-08-12T13:03:27.294Z</lastmod>
+        <lastmod>2019-08-13T14:15:56.664Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +25,7 @@
 
     <url>
         <loc>http://yoursite.com/2019/08/08/04-java-abstraction/</loc>
-        <lastmod>2019-08-10T04:17:56.259Z</lastmod>
+        <lastmod>2019-08-13T14:15:00.748Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
