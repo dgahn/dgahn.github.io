@@ -8,24 +8,24 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2019/08/19/07-java-solid-3/</loc>
-        <lastmod>2019-08-19T02:11:04.235Z</lastmod>
+        <loc>http://yoursite.com/2019/08/19/07-oop-solid-3/</loc>
+        <lastmod>2019-08-19T02:18:55.812Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://yoursite.com/2019/08/13/06-java-solid-2/</loc>
-        <lastmod>2019-08-13T14:59:27.257Z</lastmod>
+        <loc>http://yoursite.com/2019/08/12/05-oop-solid-1/</loc>
+        <lastmod>2019-08-19T02:18:55.811Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://yoursite.com/2019/08/12/05-java-solid-1/</loc>
-        <lastmod>2019-08-13T14:15:56.664Z</lastmod>
+        <loc>http://yoursite.com/2019/08/13/06-oop-solid-2/</loc>
+        <lastmod>2019-08-19T02:18:55.809Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
