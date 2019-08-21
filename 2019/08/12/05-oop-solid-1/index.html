@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OOP - SOLID - 1.SRP(단일 책임 원칙) · dgahn&#39;s의 개발 블로그</title>
+    <title>OOP - SOLID - 1.SRP(단일 책임 원칙) · Dgahn&#39;s Devlog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -214,14 +214,14 @@
     
     <div class="banner">
             <div class="blog-title">
-                <a href="/">dgahn&#39;s의 개발 블로그</a>
+                <a href="/">Dgahn&#39;s Devlog</a>
             </div>
             <div class="post-title">
                 <a href="#" class="post-name">OOP - SOLID - 1.SRP(단일 책임 원칙)</a>
             </div>
     </div>
     
-    <a class="home-link" href="/">dgahn's의 개발 블로그</a>
+    <a class="home-link" href="/">Dgahn's Devlog</a>
 </header>
     <div class="wrapper">
         <div class="site-intro" style="
@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>글자수: <span class="post-count word-count">340</span>읽는 시간: <span class="post-count reading-time">2 min</span></span>
+                        <span>글자수: <span class="post-count word-count">331</span>읽는 시간: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,11 +395,11 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p><strong>SOLID</strong> 우리가 객체 지향 패턴에 대해서 공부하게 되면 처음으로 듣게 되는 단어이다. <strong>SOLID</strong>는 꼭 Java에서만 쓰이는 용어는 아니다. 객체 지향 프로그램을 설계하는데 <strong>프로그램의 유지 보수와 확장</strong>을 쉽게 하기 위한 원칙들이다. 그 원칙들에 대해서 하나씩 살펴볼 것인데 오늘은 첫번째 원칙인 <strong>SRP(단일 책임 원칙)</strong>에 대해서 정리를 할 것이다.</p>
+        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p><strong>SOLID</strong>는 우리가 디자인 패턴에 대해서 공부하게 되면 처음으로 듣게 되는 단어이다. <strong>SOLID</strong>는 꼭 Java에서만 쓰이는 용어는 아니다. 객체 지향 프로그램을 설계하는데 <strong>프로그램의 유지 보수와 확장</strong>을 쉽게 하기 위한 원칙들이다. 그 원칙들에 대해서 하나씩 살펴볼 것인데 오늘은 첫번째 원칙인 <strong>SRP(단일 책임 원칙)</strong>에 대해서 정리를 할 것이다.</p>
 <br>
 
-<h2 id="단일-책임-원칙이란"><a href="#단일-책임-원칙이란" class="headerlink" title="단일 책임 원칙이란?"></a>단일 책임 원칙이란?</h2><p>단일 책임 원칙이란 말 그대로 책임의 기본 단위인 객체가 하나의 책임만 가져야한다는 것이다. 예를 들어, 자동차를 생각해보자. 자동차는 엔진, 바퀴, 프레임 등등으로 이루어져있다. 엔진은 자동차에게 동력을 주는 일을 바퀴는 자동차가 굴러가게 하는 일을 해준다. 이렇게 하나의 부품은 하나의 역할을 하게 하는데 만약, 바퀴가 자동차에게 동력도 주고 굴러가게 해준다고 하면 어떻게 될까? 바퀴를 교체, 변경해야할 때 동력을 주는 부분과 굴러가는 부분을 모두 변경해야할 것이다.</p>
-<p>이런 상황을 프로그램이라고 생각해보자. 하나의 객체에 여러개의 책임을 가지고 있다면 교체, 변경하는데 있어서 너무 많은 코드를 수정해야할 수도 있다는 의미이다. 객체 지향 프로그램의 장점은 변경과 확장에 대해서 용이하다라는 점인데 이는 반대되는 상황이다. 객체에는 하나의 책임만 있어서 그 책임 변경되어야할 할 때, 수정되어야 한다는 것이 <strong>단일 책임 원칙</strong>이다. 다시 말하면 <strong>객체를 변경해야하는 이유가 단 하나다</strong>라는 것이 <strong>단일 책임 원칙</strong>의 핵심이다.  </p>
+<h2 id="SRP란"><a href="#SRP란" class="headerlink" title="SRP란?"></a>SRP란?</h2><p>SRP는 말 그대로 <strong>책임의 기본 단위인 객체가 하나의 책임만 가져야한다</strong>는 것이다. 예를 들어, 자동차를 생각해보자. 자동차는 엔진, 바퀴, 프레임 등등으로 이루어져있다. 엔진은 자동차에게 동력을 주는 일을 바퀴는 자동차가 굴러가게 하는 일을 해준다. 이렇게 하나의 부품은 하나의 역할을 하게 하는데 만약, 바퀴가 자동차에게 동력도 주고 굴러가게 해준다고 하면 어떻게 될까? 바퀴를 교체, 변경해야할 때 동력을 주는 부분과 굴러가는 부분을 모두 변경해야할 것이다.</p>
+<p>이런 상황을 프로그램이라고 생각해보자. 하나의 객체에 여러개의 책임을 가지고 있다면 교체, 변경하는데 있어서 너무 많은 코드를 수정해야할 수도 있다는 의미이다. 객체 지향 프로그램의 장점은 변경과 확장에 대해서 용이하다라는 점인데 이는 반대되는 상황이다. 객체에는 하나의 책임만 있어서 그 책임 변경되어야할 할 때, 수정되어야 한다는 것이 <strong>SRP</strong>이다. 다시 말하면 <strong>객체를 변경해야하는 이유가 단 하나다</strong>라는 것이 <strong>SRP</strong>의 핵심이다.  </p>
 <br>
 
 <h2 id="책임의-의미와-변경-그리고-분리"><a href="#책임의-의미와-변경-그리고-분리" class="headerlink" title="책임의 의미와 변경 그리고 분리"></a>책임의 의미와 변경 그리고 분리</h2><p><strong>책임</strong>이란 한 객체가 <strong>해야 하는 것, 할 수 있는 것, 해야 하는 것을 잘 할 수 있는 것</strong>을 의미한다. 그래서 내가 생각하기엔 <strong>역할</strong>이라는 단어를 강하게 나타내어 <strong>책임</strong>이라는 용어를 사용하는 것 같다.</p>
@@ -413,7 +413,7 @@ height:50vh;
 </blockquote>
 <br>
 
-<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>오늘은 <strong>SOLID</strong>의 첫 번째 <strong>단일 책임 원칙</strong>에 대해서 알아봤다. 나름대로 많은 글을 썼지만 핵심은 <strong>객체를 변경하는 이유는 단 하나다.</strong>라는 것이 중점이다. 그러므로 객체 하나에 너무 많은 역할을 부여하지 않고 하나의 책임을 여러 객체의 분산시키지 않는 것이 단일 책임 원칙을 잘 지키는 설계라고 생각을 한다.  </p>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>오늘은 <strong>SOLID</strong>의 첫 번째 <strong>SRP</strong>에 대해서 알아봤다. <strong>SRP</strong>는 <strong>객체를 변경하는 이유는 단 하나다.</strong>라는 것이 중점이다. 그러므로 객체 하나에 너무 많은 역할을 부여하지 않고 하나의 책임을 여러 객체의 분산시키지 않는 것이 <strong>SRP</strong>를 잘 지키는 설계라고 생각을 한다.  </p>
 <br>
 
 <p>참고 자료</p>
@@ -562,7 +562,7 @@ height:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#단일-책임-원칙이란"><span class="toc-number">2.</span> <span class="toc-text">단일 책임 원칙이란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#책임의-의미와-변경-그리고-분리"><span class="toc-number">3.</span> <span class="toc-text">책임의 의미와 변경 그리고 분리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#잘못된-분리"><span class="toc-number">4.</span> <span class="toc-text">잘못된 분리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#결론"><span class="toc-number">5.</span> <span class="toc-text">결론</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SRP란"><span class="toc-number">2.</span> <span class="toc-text">SRP란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#책임의-의미와-변경-그리고-분리"><span class="toc-number">3.</span> <span class="toc-text">책임의 의미와 변경 그리고 분리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#잘못된-분리"><span class="toc-number">4.</span> <span class="toc-text">잘못된 분리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#결론"><span class="toc-number">5.</span> <span class="toc-text">결론</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -653,9 +653,20 @@ height:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 8
+        Total : 9
         </div>
         <!-- search  -->
         
@@ -734,6 +745,20 @@ height:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/2019/08/08/04-java-abstraction/">Java - 추상 클래스와 인터페이스</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/08/21/08-oop-solid-4/">OOP - SOLID - 4.ISP(인터페이스 분리 원칙)</a>
         </li>
     
     </ul></div>

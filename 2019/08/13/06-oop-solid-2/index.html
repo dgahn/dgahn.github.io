@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OOP - SOLID - 2.OCP(개방 폐쇄 원칙) · dgahn&#39;s의 개발 블로그</title>
+    <title>OOP - SOLID - 2.OCP(개방 폐쇄 원칙) · Dgahn&#39;s Devlog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -214,14 +214,14 @@
     
     <div class="banner">
             <div class="blog-title">
-                <a href="/">dgahn&#39;s의 개발 블로그</a>
+                <a href="/">Dgahn&#39;s Devlog</a>
             </div>
             <div class="post-title">
                 <a href="#" class="post-name">OOP - SOLID - 2.OCP(개방 폐쇄 원칙)</a>
             </div>
     </div>
     
-    <a class="home-link" href="/">dgahn's의 개발 블로그</a>
+    <a class="home-link" href="/">Dgahn's Devlog</a>
 </header>
     <div class="wrapper">
         <div class="site-intro" style="
@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>글자수: <span class="post-count word-count">225</span>읽는 시간: <span class="post-count reading-time">1 min</span></span>
+                        <span>글자수: <span class="post-count word-count">222</span>읽는 시간: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,10 +395,10 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>어제에 이어서 <strong>SOLID</strong> 중에 두번째인 <strong>개방 - 폐쇄 원칙</strong>에 대해서 정리를 해보려고 한다. </p>
+        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>어제에 이어서 <strong>SOLID</strong> 중에 두번째인 <strong>OCP</strong>에 대해서 정리를 해보려고 한다. </p>
 <br>
 
-<h2 id="개방-폐쇄-원칙이란"><a href="#개방-폐쇄-원칙이란" class="headerlink" title="개방 폐쇄 원칙이란?"></a>개방 폐쇄 원칙이란?</h2><p>개방 폐쇄원칙은 <strong>확장과 변경에는 개방되어 있지만 코드의 수정에는 폐쇄적이어야 한다</strong>는 의미이다. 다시 말하면 <strong>코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계가 되어야 한다</strong>라는 의미다. </p>
+<h2 id="OCP란"><a href="#OCP란" class="headerlink" title="OCP란?"></a>OCP란?</h2><p>OCP는 <strong>확장과 변경에는 개방되어 있지만 코드의 수정에는 폐쇄적이어야 한다</strong>는 의미이다. 다시 말하면 <strong>코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계가 되어야 한다</strong>라는 의미다. </p>
 <p>솔직히 처음 글을 읽었을 때, 이게 말이 되는 일인가? 라는 생각이 들었다. 기능을 변경하려면 코드를 변경해야하는 것이 아닌가? 라는 생각이 들었다. 기능을 변경하는 것에 대해서 다르게 생각해보자. 아래의 코드를 보자.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">private</span> B b;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">(B b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.b = b;  </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">c</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    b.b()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -406,7 +406,7 @@ height:50vh;
 <p>상속이나 인터페이스를 사용하여 다양한 기능을 가진 클래스를 만들어서 사용하고 싶은 기능을 가진 객체를 주입시키면 된다. 즉, 추상화 작업을 통해서 인터페이스나 추상 클래스를 선언하고 여러가지 구현체를 만든 다음, <strong>객체 A를 생성하는 부분에서 자신이 원하는 구현체를 주입</strong>시키면 된다. 그러면 <strong>A</strong>클래스나 <strong>B</strong>클래스를 수정하지 않았지만 기능을 확장하거나 변경할 수 있게 된다.</p>
 <br>
 
-<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>다시 말하지만 <strong>SOLID</strong>는 객체 지향 설에서 <strong>프로그램의 유지보수와 확장</strong>을 용이하게 하기 위한 원칙들이다. 그러므로 객체의 기능이 변경됬을 때, 연관된 객체들의 코드의 변경을 최소화해야한다. 이런면에서 <strong>개방 폐쇄 원칙</strong>은 비슷한 기능을 하는 객체(인터페이스의 구현체)를 추가하여 기능을 확장하고 기존의 객체 코드를 변경하지 않는 것을 의미하는 것 같다.</p>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>다시 말하지만 <strong>SOLID</strong>는 객체 지향 설계에서 <strong>프로그램의 유지보수와 확장</strong>을 용이하게 하기 위한 원칙들이다. 그러므로 객체의 기능이 변경됬을 때, 연관된 객체들의 코드의 변경을 최소화해야한다. 이런면에서 <strong>OCP</strong>는 비슷한 기능을 하는 객체(인터페이스의 구현체)를 추가하여 기능을 확장하고 기존의 객체 코드를 변경하지 않는 것을 의미하는 것 같다.</p>
 
     </article>
     <!-- license  -->
@@ -549,7 +549,7 @@ height:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#개방-폐쇄-원칙이란"><span class="toc-number">2.</span> <span class="toc-text">개방 폐쇄 원칙이란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#결론"><span class="toc-number">3.</span> <span class="toc-text">결론</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OCP란"><span class="toc-number">2.</span> <span class="toc-text">OCP란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#결론"><span class="toc-number">3.</span> <span class="toc-text">결론</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -640,9 +640,20 @@ height:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 8
+        Total : 9
         </div>
         <!-- search  -->
         
@@ -721,6 +732,20 @@ height:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/2019/08/08/04-java-abstraction/">Java - 추상 클래스와 인터페이스</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/08/21/08-oop-solid-4/">OOP - SOLID - 4.ISP(인터페이스 분리 원칙)</a>
         </li>
     
     </ul></div>
