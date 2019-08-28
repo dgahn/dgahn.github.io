@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OOP - SOLID - 2.OCP(개방 폐쇄 원칙) · Dgahn&#39;s Devlog</title>
+    <title>Java - Call By Value · Dgahn&#39;s Devlog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">Dgahn&#39;s Devlog</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">OOP - SOLID - 2.OCP(개방 폐쇄 원칙)</a>
+                <a href="#" class="post-name">Java - Call By Value</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            OOP - SOLID - 2.OCP(개방 폐쇄 원칙)
+            Java - Call By Value
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>글자수: <span class="post-count word-count">222</span>읽는 시간: <span class="post-count reading-time">1 min</span></span>
+                        <span>글자수: <span class="post-count word-count">497</span>읽는 시간: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/08/13</span>
+                    <span class="post-intro-time">2019/08/26</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,18 +395,46 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>어제에 이어서 <strong>SOLID</strong> 중에 두번째인 <strong>OCP</strong>에 대해서 정리를 해보려고 한다. </p>
+        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>우리는 메소드를 호출할 때, 자주 <strong>parameter</strong>를 넘겨주곤 한다. 이 때, 이 <strong>parameter</strong>를 넘기는 방법에 따라 여러가지 방식이 있다. 대표적인 방식은 아래의 2가지이다.</p>
+<ul>
+<li><p>Call By Value</p>
+</li>
+<li><p>Call By Reference</p>
+</li>
+</ul>
+<p>이번 포스팅에서는 <strong>Java</strong>가 왜 <strong>Call By Value</strong>에 해당하는지에 대해 설명할 예정이다.</p>
 <br>
 
-<h2 id="OCP란"><a href="#OCP란" class="headerlink" title="OCP란?"></a>OCP란?</h2><p>OCP는 <strong>확장과 변경에는 개방되어 있지만 코드의 수정에는 폐쇄적이어야 한다</strong>는 의미이다. 다시 말하면 <strong>코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계가 되어야 한다</strong>라는 의미다. </p>
-<p>솔직히 처음 글을 읽었을 때, 이게 말이 되는 일인가? 라는 생각이 들었다. 기능을 변경하려면 코드를 변경해야하는 것이 아닌가? 라는 생각이 들었다. 기능을 변경하는 것에 대해서 다르게 생각해보자. 아래의 코드를 보자.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">private</span> B b;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">(B b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.b = b;  </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">c</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    b.b()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Call-By-Value"><a href="#Call-By-Value" class="headerlink" title="Call By Value ?"></a>Call By Value ?</h2><h3 id="Case-01"><a href="#Case-01" class="headerlink" title="Case. 01"></a>Case. 01</h3><p>아래의 코드를 보자. 두 개의 <strong>parameter</strong>를 넣어 서로 바꾸는 메소드를 작성하였다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Swap</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">      <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">  </span><br><span class="line">      swap(a, b);</span><br><span class="line">  </span><br><span class="line">      System.out.println(<span class="string">"a : "</span> + a);</span><br><span class="line">      System.out.println(<span class="string">"b : "</span> + b);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">int</span> temp = a;</span><br><span class="line">     a = b;</span><br><span class="line">     b = temp;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>이런 객체가 있다고 하자. 나는 <strong>b.b()</strong>의 기능을 다양한 형태로 사용하고 싶다. 그러면 <strong>B</strong> 클래스 코드에 가서 <strong>b()</strong>메소드를 변경해야할까? 메소드나 객체를 다양한 방법으로 사용할 수 있도록 하는 객체지향의 특징인 다형성을 생각해보자. [<a href="https://dgahn.github.io/2019/08/07/03-java-oop/" rel="external nofollow noopener noreferrer" target="_blank">이전 포스트</a>]</p>
-<p>상속이나 인터페이스를 사용하여 다양한 기능을 가진 클래스를 만들어서 사용하고 싶은 기능을 가진 객체를 주입시키면 된다. 즉, 추상화 작업을 통해서 인터페이스나 추상 클래스를 선언하고 여러가지 구현체를 만든 다음, <strong>객체 A를 생성하는 부분에서 자신이 원하는 구현체를 주입</strong>시키면 된다. 그러면 <strong>A</strong>클래스나 <strong>B</strong>클래스를 수정하지 않았지만 기능을 확장하거나 변경할 수 있게 된다.</p>
 <br>
 
-<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>다시 말하지만 <strong>SOLID</strong>는 객체 지향 설계에서 <strong>프로그램의 유지보수와 확장</strong>을 용이하게 하기 위한 원칙들이다. 그러므로 객체의 기능이 변경됬을 때, 연관된 객체들의 코드의 변경을 최소화해야한다. 이런면에서 <strong>OCP</strong>는 비슷한 기능을 하는 객체(인터페이스의 구현체)를 추가하여 기능을 확장하고 기존의 객체 코드를 변경하지 않는 것을 의미하는 것 같다.</p>
+<p>결과는 아래와 같이 나온다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a : 10</span><br><span class="line">b : 20</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Java에서는 메소드가 호출되면 해당 인자의 값을 복사하여 <strong>parameter</strong>가 해당 메소드의 지역 변수로 선언이 된다. 그렇기 때문에 <strong>swap</strong> 메소드의 호출이 완료되면 Java의 스택 메모리에서 <strong>swap()</strong> 스택 프레임이 사라지면 <strong>swap</strong>메소드에 존재하는 변수 <strong>a</strong>와 <strong>b</strong>는 사라지게 되는 것이다. 여기서 알 수 있는 점은 <strong>Java 메모리 상에서 main() 메소드의 a, b와 swap() 메소드의 a, b는 아예 다른 값</strong>이라는 것이다.</p>
+<br>
+
+<h3 id="Case-02"><a href="#Case-02" class="headerlink" title="Case. 02"></a>Case. 02</h3><p>위와 같은 경우는 <strong>prmitive 타입</strong>인 경우인데 만약 <strong>참조 타입</strong>인 경우는 어떻게 될까? 동일하게 동작한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Swap</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String a = <span class="string">"a"</span>;</span><br><span class="line">    String b = <span class="string">"b"</span>;</span><br><span class="line"></span><br><span class="line">    swap(a, b);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"a : "</span> + a);</span><br><span class="line">    System.out.println(<span class="string">"b : "</span> + b);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(String a, String b)</span> </span>&#123;</span><br><span class="line">    String temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a : a</span><br><span class="line">b : b</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Case-03"><a href="#Case-03" class="headerlink" title="Case. 03"></a>Case. 03</h3><p>다만 주의해야할 점은 아래와 같이 <strong>참조 타입의 parameter</strong>를 전달하는 경우에 헷갈리지 말아야하는 부분이 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Swap</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    O a = <span class="keyword">new</span> O(<span class="string">"a"</span>);</span><br><span class="line">    O b = <span class="keyword">new</span> O(<span class="string">"b"</span>);</span><br><span class="line"></span><br><span class="line">    swap(a, b);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"a.a : "</span> + a.c);</span><br><span class="line">    System.out.println(<span class="string">"b.a : "</span> + b.c);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(O a, O b)</span> </span>&#123;</span><br><span class="line">    String temp = a.c;</span><br><span class="line">    a.c = b.c;</span><br><span class="line">    b.c = temp;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">O</span> </span>&#123;</span><br><span class="line">    String c;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">O</span><span class="params">(String c)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.c = c;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a.a : b</span><br><span class="line">b.a : a</span><br></pre></td></tr></table></figure>
+
+<p>위와 같은 경우는 <strong>클래스 O</strong>의 <strong>c</strong>를 스왑이 가능하다. 이유는 Java의 메모리 영역에 대해서 조금 이해하고 있다면 간단히 이해할 수 있다. <strong>main</strong> 메소드의 <strong>a, b</strong>는 스택 메모리의 <strong>main() 스택 프레임</strong>에 존재하고 <strong>swap</strong> 메소드의 <strong>a, b</strong>는 스택 메모리의 <strong>swap() 스택 프레임</strong>에 존재한다. 이 때, 이 값들은 <strong>실제 Object</strong>값이 아니라 실제 Object를 참조할 수 있는 값이다. 실제 <strong>Object a, b</strong>는 힙영역에 존재한다. 그렇기 때문에 <strong>Object a, b</strong>의 어떤 특정 값을 변경하는 것은 힙에서 변경되는 것이기 때문에 스왑을 해도 스왑이 되는 것이다. (아래 그림은 swap() 메소드에 a와 b의 참조 값이 복사된 순간 메모리를 간단하게 표현한 것이다.)  </p>
+<br>
+
+<p><img src="https://imgur.com/uDOCwL1.png" alt="1" title="swap() 메소드에 a와 b의 참조 값이 복사된 순간"><br><br></p>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>Java는 <strong>primitive</strong> 타입 같은 경우 값을 아예 복사해서 메소드에 값을 넘겨주고 <strong>reference</strong> 타입의 경우에는 실제 Object를 복사해서 넘겨주는 것이 아니라 실제 Object 값이 어디 있는지 알 수 있는 <strong>참조 값</strong>을 복사해서 준다. 그렇기 때문에 Java가 메소드에 <strong>parameter</strong>를 넘겨주는 방식은 <strong>Call By Value</strong>가 된다.</p>
 
     </article>
     <!-- license  -->
@@ -415,17 +443,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/08/19/07-oop-solid-3/" title="OOP - SOLID - 3.LSP(리스코프 치환 원칙)">
-                    <div class="nextTitle">OOP - SOLID - 3.LSP(리스코프 치환 원칙)</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/08/12/05-oop-solid-1/" title="OOP - SOLID - 1.SRP(단일 책임 원칙)">
-                    <div class="prevTitle">OOP - SOLID - 1.SRP(단일 책임 원칙)</div>
+                <a href="/2019/08/22/09-oop-solid-5/" title="OOP - SOLID - 5.DIP(의존 역전 원칙)">
+                    <div class="prevTitle">OOP - SOLID - 5.DIP(의존 역전 원칙)</div>
                 </a>
             
         </li>
@@ -442,8 +465,8 @@ height:50vh;
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
         var disqus_config = function () {
-        this.page.url = "http://yoursite.com/2019/08/13/06-oop-solid-2/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "OOP - SOLID - 2.OCP(개방 폐쇄 원칙)"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://yoursite.com/2019/08/26/10-java-call-by-value-reference/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "Java - Call By Value"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
         (function () { // DON'T EDIT BELOW THIS LINE
@@ -549,7 +572,7 @@ height:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OCP란"><span class="toc-number">2.</span> <span class="toc-text">OCP란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#결론"><span class="toc-number">3.</span> <span class="toc-text">결론</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Call-By-Value"><span class="toc-number">2.</span> <span class="toc-text">Call By Value ?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Case-01"><span class="toc-number">2.1.</span> <span class="toc-text">Case. 01</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Case-02"><span class="toc-number">2.2.</span> <span class="toc-text">Case. 02</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Case-03"><span class="toc-number">2.3.</span> <span class="toc-text">Case. 03</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#결론"><span class="toc-number">3.</span> <span class="toc-text">결론</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

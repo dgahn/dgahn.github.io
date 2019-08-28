@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2019/08/26/10-java-call-by-value-reference/</loc>
+        <lastmod>2019-08-28T02:30:57.995Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2019/08/22/09-oop-solid-5/</loc>
         <lastmod>2019-08-22T08:51:42.363Z</lastmod>
         <changefreq>weekly</changefreq>

@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OOP - SOLID - 2.OCP(개방 폐쇄 원칙) · Dgahn&#39;s Devlog</title>
+    <title>Dgahn&#39;s Devlog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,23 +203,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">Dgahn&#39;s Devlog</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">OOP - SOLID - 2.OCP(개방 폐쇄 원칙)</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">Dgahn's Devlog</a>
 </header>
@@ -231,68 +220,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            OOP - SOLID - 2.OCP(개방 폐쇄 원칙)
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                
-                    <div class="post-intro-read">
-                        <span>글자수: <span class="post-count word-count">222</span>읽는 시간: <span class="post-count reading-time">1 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/08/13</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -393,78 +338,41 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;">
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h2 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h2><p>어제에 이어서 <strong>SOLID</strong> 중에 두번째인 <strong>OCP</strong>에 대해서 정리를 해보려고 한다. </p>
-<br>
-
-<h2 id="OCP란"><a href="#OCP란" class="headerlink" title="OCP란?"></a>OCP란?</h2><p>OCP는 <strong>확장과 변경에는 개방되어 있지만 코드의 수정에는 폐쇄적이어야 한다</strong>는 의미이다. 다시 말하면 <strong>코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계가 되어야 한다</strong>라는 의미다. </p>
-<p>솔직히 처음 글을 읽었을 때, 이게 말이 되는 일인가? 라는 생각이 들었다. 기능을 변경하려면 코드를 변경해야하는 것이 아닌가? 라는 생각이 들었다. 기능을 변경하는 것에 대해서 다르게 생각해보자. 아래의 코드를 보자.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">private</span> B b;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">(B b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.b = b;  </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">c</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    b.b()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>이런 객체가 있다고 하자. 나는 <strong>b.b()</strong>의 기능을 다양한 형태로 사용하고 싶다. 그러면 <strong>B</strong> 클래스 코드에 가서 <strong>b()</strong>메소드를 변경해야할까? 메소드나 객체를 다양한 방법으로 사용할 수 있도록 하는 객체지향의 특징인 다형성을 생각해보자. [<a href="https://dgahn.github.io/2019/08/07/03-java-oop/" rel="external nofollow noopener noreferrer" target="_blank">이전 포스트</a>]</p>
-<p>상속이나 인터페이스를 사용하여 다양한 기능을 가진 클래스를 만들어서 사용하고 싶은 기능을 가진 객체를 주입시키면 된다. 즉, 추상화 작업을 통해서 인터페이스나 추상 클래스를 선언하고 여러가지 구현체를 만든 다음, <strong>객체 A를 생성하는 부분에서 자신이 원하는 구현체를 주입</strong>시키면 된다. 그러면 <strong>A</strong>클래스나 <strong>B</strong>클래스를 수정하지 않았지만 기능을 확장하거나 변경할 수 있게 된다.</p>
-<br>
-
-<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>다시 말하지만 <strong>SOLID</strong>는 객체 지향 설계에서 <strong>프로그램의 유지보수와 확장</strong>을 용이하게 하기 위한 원칙들이다. 그러므로 객체의 기능이 변경됬을 때, 연관된 객체들의 코드의 변경을 최소화해야한다. 이런면에서 <strong>OCP</strong>는 비슷한 기능을 하는 객체(인터페이스의 구현체)를 추가하여 기능을 확장하고 기존의 객체 코드를 변경하지 않는 것을 의미하는 것 같다.</p>
-
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/30/00-hexo-blog/">
+            
+                <span>Hexo로 블로그 만들기</span>
+        </a>
+        <div class="abstract-content">
+            서론블로그를 만들고 싶다는 생각에 인터넷을 찾아서 보았다.gitlab에서 한번 만든적이 있는데 거의 사용하지 않고 있다. 만들면서 참고한 사이트가 있다.블로그에서는 친절하게 설명을 해주고 있는데 나는 정말 간단하게 명령어를 순서대로 나열할 예정이다. 그러니 자세한 설명을 듣고 싶은 사람은 링크를 참고하길 바란다.정말 설명을 잘해주셔서 블로그를 띄우는데 많은 도움이 되었다. 다시한번 말하지만 상세한 설정법을 알고 싶으면 링크를 찾아가서 하는 것을 추천한다.
+Git &amp; npm install
+Node.js 설치
+Git 설치
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
     </article>
-    <!-- license  -->
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/08/19/07-oop-solid-3/" title="OOP - SOLID - 3.LSP(리스코프 치환 원칙)">
-                    <div class="nextTitle">OOP - SOLID - 3.LSP(리스코프 치환 원칙)</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/08/12/05-oop-solid-1/" title="OOP - SOLID - 1.SRP(단일 책임 원칙)">
-                    <div class="prevTitle">OOP - SOLID - 1.SRP(단일 책임 원칙)</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        
-        var disqus_config = function () {
-        this.page.url = "http://yoursite.com/2019/08/13/06-oop-solid-2/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "OOP - SOLID - 2.OCP(개방 폐쇄 원칙)"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://dgahn.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by Disqus.</a></noscript>
-
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/archives/2019/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
+    </nav>
     
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -544,13 +452,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style="top:50vh;">
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#서론"><span class="toc-number">1.</span> <span class="toc-text">서론</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OCP란"><span class="toc-number">2.</span> <span class="toc-text">OCP란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#결론"><span class="toc-number">3.</span> <span class="toc-text">결론</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -875,10 +776,8 @@ jsonContent:
     
     
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
-    </body>
+    
 </html>
 
 
