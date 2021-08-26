@@ -34,15 +34,17 @@ additional_links:
 
 # About Section
 # about_title: About Me
-about_profile_image: images/profile.png
+about_profile_image: images/profile.jpeg
 about_content: | 
   안녕하세요. Kotlin 기반의 4년차 백엔드 엔지니어 안덕기입니다.
 
-  기술적으로 새로운 것을 배우는 것에 대해 재미를 느끼고 필요한 것에 대해 만드는 것을 추구하는 편입니다. 
+  개발자로서 중요하게 여기는 가치는 다음과 같습니다.
 
-  자유로운 분위기에서 자신의 일에 대해 책임지는 것을 선호합니다.
+  - 기술에 대한 빠른 적응 : 현 회사에 입사했을 때 당시 빠른 적응 위해 백엔드에서 사용하는 <mark>모든 라이브러리를 직접 다시 세팅</mark>하면서 학습하였고 gradle 사용 언어를 groovy에서 kotlin으로 개편하였습니다.
 
-  테스트 코드를 만들지 않는 것에 대해 불안해하고 테스트 코드를 통과하는 것에 대해 퀘스트를 해결하는 것처럼 즐거움을 느낍니다. 
+  - 새로운 기술에 대한 흥미 : 발전하는 개발자가 되기 위해 제가 몰랐던 새로운 기술에 대해 학습하고 도전하는 것을 즐깁니다. 회사 내에서 <mark>TDD, DDD 등의 스터디를 주도하여</mark> 저뿐만 아니라 <mark>구성원들의 지식 폭</mark>을 넓히기 위해 노력하였습니다.
+
+  - 자기 일에 대한 책임감 : 새로운 기술이나 더 좋은 설계를 위해서는 그만한 노력과 시간이 들어갑니다. 회사 내에서 하겠다고 결심한 일에 대해서는 마무리하는 것을 중요시합니다.
 
 content:
   - title: 프로젝트 # Title for the section
@@ -110,8 +112,7 @@ content:
         description: | # this will include new lines to allow paragraphs
             - Kotlin Coroutine 기반의 비동기 코드 작성
             - IDC / Kubernates 환경에서 개발 및 운영
-            - 테스트 코드 커버러지 80% 유지
-            - 한글 파일을 만들 수 있는 <a href="https://github.com/neolord0/hwplib">hwplib</a> 라이브러리의 사용성을 올린 <a href="https://github.com/dgahn/hwplib-dsl">hwplib-dsl</a> 제작 
+            - 테스트 코드 커버리지 80% 유지
         
       - layout: left
         title: (주)테크앤
@@ -123,6 +124,47 @@ content:
         description: | # this will include new lines to allow paragraphs
             - Spring Boot, MyBatis를 통한 Java 백엔드 개발
             - MQTT를 통한 Pub/Sub 구조의 아키텍처
+    
+  - title: OpenSource 
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: hwplib-dsl
+        link: https://github.com/dgahn/hwplib-dsl
+        quote: >
+          한글 파일을 만들 수 있는 kotlin dsl 라이브러리
+        description: | # this will include new lines to allow paragraphs
+            - 업무 중에 한글 파일 양식을 만들어야 했고 기존 <a href="https://github.com/neolord0/hwplib">hwplib</a>로 유지보수하는 것이 불편하여 직접 dsl로 개발
+      - layout: left
+        title: 개인 블로그
+        link: https://github.com/dgahn/hwplib-dsl
+        quote: >
+          개인 기술 블로그
+        description: | 
+            - Kotlin으로 만들어진 예제 코드가 많이 부족하여 정리하기 위해 작성 시작함. 
+            - 아직 초기라 글이 많이 있지는 않지만 계속해서 작성할 예정임.
+
+  - title: Education 
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: 인프런
+        link: https://www.inflearn.com/
+        quote: >
+          Spring 및 Kotlin Coroutine 관련 강의 수강
+        description: | # this will include new lines to allow paragraphs
+            - <a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-JPA-%EC%8B%A4%EC%A0%84/dashboard">실전! 스프링 데이터 JPA</a>
+            - <a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1/dashboard">실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발</a>
+            - <a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-API%EA%B0%9C%EB%B0%9C-%EC%84%B1%EB%8A%A5%EC%B5%9C%EC%A0%81%ED%99%94/dashboard">실전! 스프링 부트와 JPA 활용2 - API 개발과 성능 최적화</a>
+            - <a href="https://www.inflearn.com/course/%EC%83%88%EC%B0%A8%EC%9B%90-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4/dashboard">새차원의 코틀린 코루틴 강좌</a>
+            - <a href="https://www.inflearn.com/course/ORM-JPA-Basic/dashboard">자바 ORM 표준 JPA 프로그래밍 - 기본편</a>
+      - layout: left
+        title: 패스트캠퍼스
+        link: https://fastcampus.co.kr/
+        quote: >
+          TDD 강의 수강
+        description: | 
+            - <a href="https://fastcampus.co.kr/dev_red_ygw">현실 세상의 TDD : 안정감을 주는 코드 작성 방법</a>
 
 # Footer
 footer_show_references: true
