@@ -143,7 +143,7 @@ content:
           개인 기술 블로그
         description: |
           - Kotlin으로 만들어진 예제 코드가 많이 부족하여 정리하기 위해 작성 시작함.
-          - 현재는 영어로된 문서들을 공부하면서 얻은 정보들을 모아두는 용도로 사용하고 있음.
+          - 현재는 영어로된 문서들을 공부하면서 얻은 정보들이나 읽었던 책 내용을 요약해서 모아두는 용도로 사용하고 있음.
 
   - title: Education
     layout: list # Type of content section (list/text)
