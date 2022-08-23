@@ -47,13 +47,63 @@ about_content: |
   - 자기 일에 대한 책임감 : 새로운 기술이나 더 좋은 설계를 위해서는 그만한 노력과 시간이 들어갑니다. 회사 내에서 하겠다고 결심한 일에 대해서는 마무리하는 것을 중요시합니다.
 
 content:
-  - title: 프로젝트 # Title for the section
+  - title: Experience # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Rapportlabs
+        link: https://www.rapportlabs.kr/
+        sub_title: Kotlin 백엔드 개발자
+        caption: 2022.5 - Present
+        quote: >
+          월 MAU 185만의 X세대 여성을 위한 패션 플랫폼
+        description: | # this will include new lines to allow paragraphs
+          - Spring Scheduler를 통한 알림톡 개발
+          - 백오피스를 위한 API 개발
+          - 20초 이상 -> 1초미만으로 쿼리 개선
+
+      - layout: left
+        title: (주)SIA
+        link: https://si-analytics.ai/
+        sub_title: Kotlin 백엔드 개발자
+        caption: 2020.1 - 2022.5
+        quote: >
+          국내 최고의 위성 영상 분석 기업
+        description: | # this will include new lines to allow paragraphs
+          - Kotlin Coroutine 기반의 비동기 코드 작성
+          - IDC / Kubernates 환경에서 개발 및 운영
+          - 테스트 코드 커버리지 80% 유지
+
+      - layout: left
+        title: (주)테크앤
+        link: https://techandslow.com/
+        sub_title: Java 백엔드 개발자
+        caption: 2018.1 - 2019.9
+        quote: >
+          IoT 솔루션 및 IoT 교육 키트 제공 업체
+        description: | # this will include new lines to allow paragraphs
+          - Spring Boot, MyBatis를 통한 Java 백엔드 개발
+          - MQTT를 통한 Pub/Sub 구조의 아키텍처
+  - title: 스쿼드 및 프로젝트 # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: top-middle
+        title: CX 스쿼드
+        quote: >
+          2022.5 ~ Present
+        description: |
+          - 스쿼드 소개
+            - 고객에게 좀 더 좋은 경험을 하게 할 수 있도록 제품 개선 
+            - 고객 센터 Admin 페이지를 위한 API 개발 및 App API 개선 
+          - 역할
+            - 백오피스 API 개발
+            - 알림톡 개선 및 개발
+          - 기술 스택
+            - Kotlin, Spring Boot, Open API Specification, JPA, Spring Scheduler, Mysql, Redis
+      - layout: top-middle
         title: 위성 영상 분석 시스템
         quote: >
-          2020.1.2 ~ Present
+          2020.1 ~ 2022.5
         description: |
           - 프로젝트 소개
             - 하루에 약 10만 킬로 제곱의 위성영상을 분석하는 시스템
@@ -68,7 +118,7 @@ content:
       - layout: top-middle
         title: 운량분석 자동화 국가 위성 통합 운영 시스템
         quote: >
-          2020.10.22 ~ 2022.3.31
+          2020.10 ~ 2022.3
         description: |
           - 프로젝트 소개
             - 하루 약 1000장의 영상의 운량을 분석하는 시스템
@@ -90,41 +140,15 @@ content:
           - Armeria, gRPC/Protocol Buffer, Spring MVC, Spring Batch, Ktor
           - Hibernate, Spring Data JPA
           - Kotest, Junit5, Mockk, Mockito
-          - Postgres/Postgis
+          - Postgres/Postgis, MySQL, Redis
           - Kotlin Coroutine
       - layout: left
         title: Devops
         description: |
           - Ubuntu, MacOS, WindowOS
           - Docker, Kubernates
-          - Azure DevOps
+          - Azure DevOps, Terraform
           - Github, Github Actions
-
-  - title: Experience # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: (주)SIA
-        link: https://si-analytics.ai/
-        sub_title: Kotlin 백엔드 개발자
-        caption: 2020.1 - Present
-        quote: >
-          국내 최고의 위성 영상 분석 기업
-        description: | # this will include new lines to allow paragraphs
-          - Kotlin Coroutine 기반의 비동기 코드 작성
-          - IDC / Kubernates 환경에서 개발 및 운영
-          - 테스트 코드 커버리지 80% 유지
-
-      - layout: left
-        title: (주)테크앤
-        link: https://techandslow.com/
-        sub_title: Java 백엔드 개발자
-        caption: 2018.1 - 2019.9
-        quote: >
-          IoT 솔루션 및 IoT 교육 키트 제공 업체
-        description: | # this will include new lines to allow paragraphs
-          - Spring Boot, MyBatis를 통한 Java 백엔드 개발
-          - MQTT를 통한 Pub/Sub 구조의 아키텍처
 
   - title: OpenSource
     layout: list # Type of content section (list/text)
