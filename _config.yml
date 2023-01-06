@@ -7,7 +7,7 @@ version: 2
 
 # Personal info
 name: 안덕기
-title: Kotlin 백엔드 엔지니어
+title: 서버 백엔드 엔지니어
 email: dgahn@icloud.com
 # website: www.github.com/dgahn
 
@@ -36,7 +36,7 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpeg
 about_content: |
-  안녕하세요. Kotlin 기반의 5년차 백엔드 엔지니어 안덕기입니다.
+  안녕하세요. Kotlin/Java & Spring 기반의 6년차 백엔드 엔지니어 안덕기입니다.
 
   개발자로서 중요하게 여기는 가치는 다음과 같습니다.
 
@@ -50,6 +50,17 @@ content:
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
+      - layout: left
+        title: (주)카카오페이손해보험
+        link: https://www.kakaoinsure.com/
+        sub_title: Java/Kotlin 백엔드 개발자
+        caption: 2022.12 - 현재
+        quote: >
+          빅테크 기반의 보험 서비스
+        description: | # this will include new lines to allow paragraphs
+          - 기존 보험의 레거시 코드 개선
+          - 보험 계약 도메인 개발
+
       - layout: left
         title: Rapportlabs
         link: https://www.rapportlabs.kr/
@@ -87,6 +98,19 @@ content:
   - title: 스쿼드 및 프로젝트 # Title for the section
     layout: list # Type of content section (list/text)
     content:
+      - layout: top-middle
+        title: 계약 Unit
+        quote: >
+          2022.12 ~ 현재
+        description: |
+          - 유닛 소개
+            - 보험 고객이 좀 더 쉽게 보험 계약을 할 수 있도록 제품 개선
+            - 기존에 개발되었던 거대한 보험 계약 관련 코드 레거시 개선
+          - 역할
+            - 신규 보험 계약 API 개발
+            - 기존 보험 로직 개선
+          - 기술 스택
+            - Java, Spring Boot, JPA, QueryDsl, Mysql
       - layout: top-middle
         title: CX 스쿼드
         quote: >
