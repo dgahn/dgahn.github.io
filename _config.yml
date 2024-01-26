@@ -109,8 +109,9 @@ content:
             - CI/CD, 배치 파이프 라인 개선
             - 기존 레거시 아키텍처 개선
           - 역할
-            - 보험 후기, 리워드, 슬랙 API 개발
-            - 개발자를 위한 개발 환경 개선
+            - 보험 후기, 리워드, 슬랙, OCR 연동 API 개발
+            - 개발자를 위한 개발 환경 개선(restdocs dsl, github action 등)
+            - FEP 내재화 진행 중
           - 기술 스택
             - Kotlin, Java, Spring Webflux, JPA, QueryDsl, Mysql, Github Actions, Kotlin Coroutine
       - layout: top-middle
