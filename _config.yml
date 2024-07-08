@@ -36,15 +36,15 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpeg
 about_content: |
-  안녕하세요. Kotlin/Java & Spring 기반의 6년차 백엔드 엔지니어 안덕기입니다.
+  안녕하세요. Kotlin/Java & Spring 기반의 7년차 백엔드 엔지니어 안덕기입니다.
 
   개발자로서 중요하게 여기는 가치는 다음과 같습니다.
 
-  - 도메인에 대한 깊은 이해 : 현 회사에 입사했을 당시 기술보다도 중요하게 여긴 것은 내가 만들고 있는 서비스에 대한 도메인 이해라고 생각했습니다. 그래서 보험 관련 교육을 들으면서 보험이 무엇인지부터 보험 관련 서비스들이 창출해내려고 하는 가치가 무엇인지 이해하기 위해 노력하였습니다. 
+  - 도메인에 대한 깊은 이해 : 현 회사에 입사했을 당시 <mark>기술</mark>보다도 중요하게 여긴 것은 내가 만들고 있는 <mark>서비스에 대한 도메인 이해</mark>라고 생각했습니다. 그래서 보험 관련 교육을 들으면서 보험이 무엇인지부터 보험 관련 서비스들이 창출해내려고 하는 가치가 무엇인지 이해하기 위해 노력하였습니다. 
 
   - 새로운 기술에 대한 흥미 : 발전하는 개발자가 되기 위해 제가 몰랐던 새로운 기술에 대해 학습하고 도전하는 것을 즐깁니다. 회사 내에서 <mark>TDD, DDD, 클린 아키텍처, 이펙티브 자바/코틀린 등의 스터디를 주도하여</mark> 저뿐만 아니라 <mark>구성원들의 지식 폭</mark>을 넓히기 위해 노력하였습니다. 뿐만 아니라 월 1회 이상 사내 발표를 통해 평소 관심있게 생각했던 기술들에 대해 동료들에게 소개를 하고 있습니다.
 
-  - 자기 일에 대한 책임감 : 새로운 기술이나 더 좋은 설계를 위해서는 그만한 노력과 시간이 들어갑니다. 회사 내에서 하겠다고 결심한 일에 대해서는 마무리하는 것을 중요시합니다.
+  - 똑똑한 반복 : 반복적인 작업을 좋아합니다. 다만, 비효율적인 반복을 싫어하기 때문에 어떻게 하면 효율적으로 작업을 할 수 있을까 고민하는 것을 좋아합니다. <mark>입사자를 위한 쉘 스크립트 개발</mark>부터 <mark>FEP 솔루션 대체를 위한 라이브러리 개발</mark>등 사소한 것부터 다양한 부분에서 비효율적인 것을 찾아 개선하는 것을 좋아합니다.
 
 content:
   - title: Experience # Title for the section
@@ -61,6 +61,8 @@ content:
           - 기존 보험의 레거시 코드 개선
           - 보험 계약 도메인 개발
           - 백엔드 개발을 위한 공통 모듈/도메인 개발
+          - AI 데이터 서빙 플랫폼 개발
+          - ETL 플랫폼 개발
 
       - layout: left
         title: Rapportlabs
@@ -100,18 +102,18 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: top-middle
-        title: 공통 플랫폼팀
+        title: 플랫폼기술팀
         quote: >
           2022.12 ~ 현재
         description: |
           - 팀 소개
             - 보험 도메인 외의 시스템 개선 및 도메인 개발
             - CI/CD, 배치 파이프 라인 개선
-            - 기존 레거시 아키텍처 개선
+            - OCR, RAG등의 기술을 활용한 AI 서비스 제공
           - 역할
-            - 보험 후기, 리워드, 슬랙, OCR 연동 API 개발
+            - 보험 후기, 리워드, 슬랙, AI 데이터 서빙 API 개발
             - 개발자를 위한 개발 환경 개선(restdocs dsl, github action 등)
-            - FEP 내재화 진행 중
+            - 솔루션 담당 및 내재화
           - 기술 스택
             - Kotlin, Java, Spring Webflux, JPA, QueryDsl, Mysql, Github Actions, Kotlin Coroutine
       - layout: top-middle
