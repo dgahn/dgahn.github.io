@@ -36,19 +36,24 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpeg
 about_content: |
-  안녕하세요. Kotlin/Java & Spring 기반의 7년차 백엔드 엔지니어 안덕기입니다.
+  안녕하세요. Kotlin/Java & Spring 기반의 8년차 백엔드 엔지니어 안덕기입니다.
 
-  개발자로서 중요하게 여기는 가치는 다음과 같습니다.
+  저는 **지속적으로 개선하고, 안정적으로 확장할 수 있는 시스템**을 만들기 위해 노력하는 개발자입니다. 아래는 제가 일하면서 중요하게 여기는 가치입니다.
 
-  - 도메인에 대한 깊은 이해 : 현 회사에 입사했을 당시 <mark>기술</mark>보다도 중요하게 여긴 것은 내가 만들고 있는 <mark>서비스에 대한 도메인 이해</mark>라고 생각했습니다. 그래서 보험 관련 교육을 들으면서 보험이 무엇인지부터 보험 관련 서비스들이 창출해내려고 하는 가치가 무엇인지 이해하기 위해 노력하였습니다. 
+  - **효율을 위한 반복 최적화**  
+    반복적인 작업을 마다하지 않되, 항상 더 나은 방식이 무엇일지 고민합니다. <mark>입사자를 위한 환경 설정 스크립트 자동화</mark>부터 <mark>FEP 솔루션을 대체하는 공통 라이브러리 개발</mark>까지, 불필요한 반복을 줄이고 개발 효율을 높이기 위한 개선에 적극적으로 참여해왔습니다.
 
-  - 새로운 기술에 대한 흥미 : 발전하는 개발자가 되기 위해 제가 몰랐던 새로운 기술에 대해 학습하고 도전하는 것을 즐깁니다. 회사 내에서 <mark>TDD, DDD, 클린 아키텍처, 이펙티브 자바/코틀린 등의 스터디를 주도하여</mark> 저뿐만 아니라 <mark>구성원들의 지식 폭</mark>을 넓히기 위해 노력하였습니다. 뿐만 아니라 월 1회 이상 사내 발표를 통해 평소 관심있게 생각했던 기술들에 대해 동료들에게 소개를 하고 있습니다.
+  - **새로운 기술에 대한 빠른 흡수력과 실전 적용 능력**  
+    TDD, DDD, 클린 아키텍처, 코루틴 등 다양한 기술 주제에 대해 스터디를 주도하고, <mark>사내 발표를 통해 기술 공유</mark>를 지속적으로 해왔습니다. 최근에는 RAG, 시계열 예측, OCR 등 AI 기술을 실제 서비스에 적용하고, <mark>Slack 기반 업무 자동화, ETL 아키텍처 설계</mark> 등의 프로젝트를 주도하며 새로운 기술을 실전으로 연결하는 데 집중하고 있습니다.
 
-  - 똑똑한 반복 : 반복적인 작업을 좋아합니다. 다만, 비효율적인 반복을 싫어하기 때문에 어떻게 하면 효율적으로 작업을 할 수 있을까 고민하는 것을 좋아합니다. <mark>입사자를 위한 쉘 스크립트 개발</mark>부터 <mark>FEP 솔루션 대체를 위한 라이브러리 개발</mark>등 사소한 것부터 다양한 부분에서 비효율적인 것을 찾아 개선하는 것을 좋아합니다.
+  - **도메인 중심의 문제 해결력**  
+    기술 자체도 중요하지만 그것이 **서비스에서 어떤 가치를 만들어내는가**도 중요하게 생각합니다. 보험이라는 도메인에 대한 깊은 이해를 바탕으로, <mark>계약·설계·배서 등 핵심 업무 로직을 공통화하고 레거시 시스템을 효율적으로 개선</mark>하는 작업에 집중해 왔습니다.
+
+  저는 앞으로도, 복잡한 문제를 단순하고 우아하게 풀어내는 시스템을 만들기 위해 끊임없이 고민하고 도전하는 개발자이고 싶습니다.
 
 content:
-  - title: Experience # Title for the section
-    layout: list # Type of content section (list/text)
+  - title: Experience
+    layout: list
     content:
       - layout: left
         title: (주)카카오페이손해보험
@@ -56,13 +61,11 @@ content:
         sub_title: Java/Kotlin 백엔드 개발자
         caption: 2022.12 - 현재
         quote: >
-          빅테크 기반의 보험 서비스
-        description: | # this will include new lines to allow paragraphs
-          - 기존 보험의 레거시 코드 개선
-          - 보험 계약 도메인 개발
-          - 백엔드 개발을 위한 공통 모듈/도메인 개발
-          - AI 데이터 서빙 플랫폼 개발
-          - ETL 플랫폼 개발
+          빅테크 기반의 보험 플랫폼에서 AI 기술을 접목한 백엔드 시스템 설계 및 운영
+        description: |
+          - 다양한 보험 도메인에서 복잡한 레거시 시스템을 리팩토링하고, 공통 모듈화 및 성능 최적화를 통해 생산성과 유지보수성을 개선
+          - RAG, 시계열 예측, OCR 등 AI 기술을 실무에 적용하여 실제 서비스에 연동하고, 데이터를 활용한 자동화 및 사용자 경험 개선 실현
+          - ETL 아키텍처 및 Slack 기반 업무 봇 등 새로운 백엔드 시스템의 설계부터 구현까지 주도, 역할 분리를 통한 유연한 구조 지향
 
       - layout: left
         title: Rapportlabs
@@ -70,11 +73,10 @@ content:
         sub_title: Kotlin 백엔드 개발자
         caption: 2022.5 - 2022.9
         quote: >
-          월 MAU 185만의 X세대 여성을 위한 패션 플랫폼
-        description: | # this will include new lines to allow paragraphs
-          - Spring Scheduler를 통한 알림톡 개발
-          - 백오피스를 위한 API 개발
-          - 20초 이상 -> 1초미만으로 쿼리 개선
+          월간 185만 MAU를 보유한 여성 패션 커머스 플랫폼
+        description: |
+          - 고객센터 백오피스 및 알림톡 API를 설계 및 개발하며, 고객 경험을 개선하는 데 기여
+          - 주요 쿼리 병목 구간을 개선하여 API 응답 속도를 20초 이상 → 1초 미만으로 최적화
 
       - layout: left
         title: (주)SIA
@@ -82,11 +84,12 @@ content:
         sub_title: Kotlin 백엔드 개발자
         caption: 2020.1 - 2022.5
         quote: >
-          국내 최고의 위성 영상 분석 기업
-        description: | # this will include new lines to allow paragraphs
-          - Kotlin Coroutine 기반의 비동기 코드 작성
-          - IDC / Kubernates 환경에서 개발 및 운영
-          - 테스트 코드 커버리지 80% 유지
+          위성 영상 기반 AI 분석 솔루션 기업
+        description: |
+          - 위성 영상 처리 시스템의 전체 파이프라인을 설계 및 구현하며, 영상 수신부터 분석, 보고서 출력까지 자동화 구조 구축
+          - Kotlin Coroutine 기반의 비동기 처리로 대용량 영상 병렬 처리 효율을 개선
+          - Object Detection, Classification 모델 결과를 시스템에 통합하여 AI 기반 자동화 서비스 운영
+          - Kubernetes 기반의 환경에서 안정적인 배포 및 운영을 수행하며, 테스트 커버리지 80% 이상 유지
 
       - layout: left
         title: (주)테크앤
@@ -94,83 +97,70 @@ content:
         sub_title: Java 백엔드 개발자
         caption: 2018.1 - 2019.9
         quote: >
-          IoT 솔루션 및 IoT 교육 키트 제공 업체
-        description: | # this will include new lines to allow paragraphs
-          - Spring Boot, MyBatis를 통한 Java 백엔드 개발
-          - MQTT를 통한 Pub/Sub 구조의 아키텍처
-  - title: 스쿼드 및 프로젝트 # Title for the section
-    layout: list # Type of content section (list/text)
+          IoT 솔루션 및 교육 키트를 제공하는 하드웨어-소프트웨어 융합 기업
+        description: |
+          - IoT 기기 데이터를 처리하는 Spring Boot 기반의 백엔드 시스템을 설계 및 유지보수
+          - MQTT 기반의 Pub/Sub 아키텍처를 적용하여 실시간 통신 구조 구축
+
+  - title: 역량
+    layout: list
     content:
       - layout: top-middle
-        title: 플랫폼기술팀
+        title: 레거시 시스템 개선
         quote: >
-          2022.12 ~ 현재
+          복잡하게 얽힌 레거시 시스템의 구조를 분석하고, 안정성·성능·유지보수성을 고려한 개선 작업을 통해 서비스 품질과 개발 생산성을 동시에 향상시켰습니다.
         description: |
-          - 팀 소개
-            - 보험 도메인 외의 시스템 개선 및 도메인 개발
-            - CI/CD, 배치 파이프 라인 개선
-            - OCR, RAG등의 기술을 활용한 AI 서비스 제공
-          - 역할
-            - 보험 후기, 리워드, 슬랙, AI 데이터 서빙 API 개발
-            - 개발자를 위한 개발 환경 개선(restdocs dsl, github action 등)
-            - 솔루션 담당 및 내재화
-          - 기술 스택
-            - Kotlin, Java, Spring Webflux, JPA, QueryDsl, Mysql, Github Actions, Kotlin Coroutine
-      - layout: top-middle
-        title: 계약 Unit
-        quote: >
-          2022.12 ~ 2023.03
-        description: |
-          - 유닛 소개
-            - 보험 고객이 좀 더 쉽게 보험 계약을 할 수 있도록 제품 개선
-            - 기존에 개발되었던 거대한 보험 계약 관련 코드 레거시 개선
-          - 역할
-            - 신규 보험 계약 API 개발
-            - 기존 보험 로직 개선(10초 -> 1초로 개선)
-          - 기술 스택
-            - Java, Spring Boot, JPA, QueryDsl, Mysql
-      - layout: top-middle
-        title: CX 스쿼드
-        quote: >
-          2022.5 ~ 2022.9
-        description: |
-          - 스쿼드 소개
-            - 고객에게 좀 더 좋은 경험을 하게 할 수 있도록 제품 개선 
-            - 고객 센터 Admin 페이지를 위한 API 개발 및 App API 개선 
-          - 역할
-            - 백오피스 API 개발
-            - 알림톡 개선 및 개발
-          - 기술 스택
-            - Kotlin, Spring Boot, Open API Specification, JPA, Spring Scheduler, Mysql, Redis
-      - layout: top-middle
-        title: 위성 영상 분석 시스템
-        quote: >
-          2020.1 ~ 2022.5
-        description: |
-          - 프로젝트 소개
-            - 하루에 약 10만 킬로 제곱의 위성영상을 분석하는 시스템
-            - IDC 인프라와 Kubernetes 환경에서의 개발 및 운영
-          - 역할
-            - 백엔드 시스템 설계 및 개발
-            - 내부 시스템 운영 및 고객사 설치
-            - 백엔드 기술 관련 세팅
-          - 기술 스택
-            - Kotlin, Armeria, gRPC, Protocol buffer, Hibernate, Kubernates, Spring Batch, Postgis, Gdal
+          - 데이터 키 관리 암호화 모듈 개선 (2025.03 ~ 2025.05)
+            - AWS와 직접 통신하는 중앙 키 관리 워크로드와, 키 캐싱 및 전달만 담당하는 SDK로 역할을 명확히 분리하여 시스템 안정성과 유연성 확보
+            - AWS SDK EOL 대응 및 불필요한 복호화 제거를 통해 보안성과 처리 효율 개선
+            - 기존 모듈의 메서드 시그니처를 유지해 교체 시 호환성 확보
+          - FEP 전문 통신 레거시 시스템 라이브러리화 (2024.02 ~ 2024.05)
+            - 엑셀 기반 수작업 설정을 코드 기반 설정으로 전환하여 운영 자동화
+            - 블랙박스 형태의 전문 통신 영역을 제거하고 로직 가시성 확보
+            - 금융 감사에 대응할 수 있도록 CI/CD 기반 배포 프로세스 재구성
+          - 보험 계약 시스템 리팩토링 (2023.01 ~ 2023.03)
+            - 보험 설계, 계약, 배서 등 도메인 공통 로직을 모듈화하여 코드 중복 제거 및 재사용성 향상
+            - 수만 줄의 코드를 수백 줄로 리팩토링하여 유지보수 용이성 확보
+            - 복잡한 계약 처리 로직의 처리 속도를 수십 초 → 1초 미만으로 개선
+          - 위성 영상 분석 보고서 시스템 개선 (2020.11 ~ 2021.03)
+            - HWP, HTML 등 고객 요구 형식으로 결과를 제공할 수 있도록 출력 모듈 개선
+            - 기존 hwplib 기반 구조를 Kotlin DSL 기반으로 재설계하여 개발 생산성 향상
+            - Kotlin Coroutine 기반 비동기 처리로 영상 병렬 처리 성능 확보
 
       - layout: top-middle
-        title: 운량분석 자동화 국가 위성 통합 운영 시스템
+        title: 새로운 아키텍처 설계 및 개발
         quote: >
-          2020.10 ~ 2022.3
+          각 구성 요소가 명확한 책임을 가지고 서로 영향을 최소화할 수 있는 구조를 지향합니다.<br/>
+          이러한 철학을 바탕으로 유연하고 유지보수가 쉬운 아키텍처를 설계하고 있습니다.
         description: |
-          - 프로젝트 소개
-            - 하루 약 1000장의 영상의 운량을 분석하는 시스템
-            - Docker 환경에서의 개발 및 운영
-          - 역할
-            - 시스템 설계 및 개발 리더
-            - 내부 시스템 운영 및 고객사 설치
-            - 백엔드 기술 관련 세팅
-          - 기술 스택
-            - Kotlin, Armeria, gRPC, Protocol buffer, hibernate, Docker, MS-SQL
+          - RAG 기반 사내 업무 봇 시스템 설계 (2025.03 ~ 현재)
+            - Slack → Proxy → LLM 오케스트레이터로 이어지는 비동기 처리 구조 설계
+            - 요청 제한(Rate Limit) 대응을 위한 Proxy 서버 도입 및 비동기 큐 처리 적용
+            - ETL 플랫폼과의 연계를 통해 도메인 지식 기반 데이터 구축 자동화
+          - ETL 아키텍처 설계 및 개발 (2024.03 ~ 현재)
+            - Extract: OpenAPI, 파일 기반의 원본 데이터를 MongoDB에 저장하여 추적 가능성 확보
+            - Transform: 도메인별 로직에 따라 데이터를 전처리 및 변환
+            - Load: 변환된 데이터를 단일 API에서 type/version 기준으로 제공, restdocs-api-spec 기반 문서화
+          - 위성 영상 프로세싱 아키텍처 설계 (2020.01 ~ 2022.05)
+            - 영상 수신 → 타일링 → 인퍼런스 → 결과 저장 → 보고서 생성의 전체 프로세스를 정의
+            - 각 단계는 Kotlin Coroutine 기반으로 비동기 처리하여 병렬성과 성능 확보
+
+      - layout: top-middle
+        title: AI 기술에 대한 관심과 실전 적용 경험
+        quote: >
+          RAG, OCR, 시계열 예측, 영상 인식 등 다양한 AI 기술을 직접 서비스에 접목해본 실전 경험을 바탕으로,<br/>
+          단순 기술 도입을 넘는 실질적 문제 해결에 집중하고 있습니다.
+        description: |
+          - RAG 기반 사내 업무 봇 개발 (2025.03 ~ 현재)
+            - Spring AI 기반 오케스트레이터를 통해 LLM 응답 흐름 제어
+            - Slack, OpenSearch(Vector DB), Bedrock(Claude 3.5 sonnet) 등을 연계한 검색형 응답 시스템 구축
+          - OCR 서빙 데이터 플랫폼 개발 (2023.10 ~ 현재)
+            - MultipartFile, Byte Array, S3 URL 등 다양한 입력 포맷을 표준화하여 OCR 전처리 자동화
+            - JsonNode 기반 비정형 데이터 처리 구조 설계로 확장성 및 유지보수성 확보
+          - 시계열 예측 모델 기반 출국장 혼잡도 데이터 제공 (2024.10 ~ 2025.02)
+            - 데이터 수집 → 전처리 → 예측 모델 적용 → API 서빙까지 전체 파이프라인 구축
+          - 위성 영상 분석 AI 서비스 개발 (2020.01 ~ 2022.05)
+            - Object Detection 및 Classification 모델을 활용하여 분석 결과 정제 및 보고서 자동 생성
 
   - title: Skill # Title for the section
     layout: list # Type of content section (list/text)
@@ -178,11 +168,11 @@ content:
       - layout: left
         title: Backend
         description: |
-          - Kotlin, Java
-          - Armeria, gRPC/Protocol Buffer, Spring MVC, Spring Batch, Ktor
+          - Kotlin, Java, Python
+          - Spring Webflux, Spring Batch, Spring AI, Armeria, gRPC/Protocol Buffer, Tensorflow
           - Hibernate, Spring Data JPA
           - Kotest, Junit5, Mockk, Mockito
-          - Postgres/Postgis, MySQL, Redis
+          - Postgres/Postgis, MySQL, Redis, OpenSearch
           - Kotlin Coroutine
       - layout: left
         title: Devops
