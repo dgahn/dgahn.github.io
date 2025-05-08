@@ -39,12 +39,12 @@ about_content: |
   안녕하세요. Kotlin/Java & Spring 기반의 8년차 백엔드 엔지니어 안덕기입니다.
 
   저는 **지속적으로 개선하고, 안정적으로 확장할 수 있는 시스템**을 만들기 위해 노력하는 개발자입니다. 아래는 제가 일하면서 중요하게 여기는 가치입니다.
+  
+  - **새로운 기술에 대한 빠른 흡수력과 실전 적용 능력**
+    TDD, DDD, 클린 아키텍처, 코루틴 등 다양한 기술 주제에 대해 스터디를 주도하고, <mark>사내 발표를 통해 기술 공유</mark>를 지속적으로 해왔습니다. 최근에는 RAG, 시계열 예측, OCR 등 AI 기술을 실제 서비스에 적용하고, <mark>Slack 기반 업무 자동화, ETL 아키텍처 설계</mark> 등의 프로젝트를 주도하며 새로운 기술을 실전으로 연결하는 데 집중하고 있습니다.
 
   - **효율을 위한 반복 최적화**  
     반복적인 작업을 마다하지 않되, 항상 더 나은 방식이 무엇일지 고민합니다. <mark>입사자를 위한 환경 설정 스크립트 자동화</mark>부터 <mark>FEP 솔루션을 대체하는 공통 라이브러리 개발</mark>까지, 불필요한 반복을 줄이고 개발 효율을 높이기 위한 개선에 적극적으로 참여해왔습니다.
-
-  - **새로운 기술에 대한 빠른 흡수력과 실전 적용 능력**  
-    TDD, DDD, 클린 아키텍처, 코루틴 등 다양한 기술 주제에 대해 스터디를 주도하고, <mark>사내 발표를 통해 기술 공유</mark>를 지속적으로 해왔습니다. 최근에는 RAG, 시계열 예측, OCR 등 AI 기술을 실제 서비스에 적용하고, <mark>Slack 기반 업무 자동화, ETL 아키텍처 설계</mark> 등의 프로젝트를 주도하며 새로운 기술을 실전으로 연결하는 데 집중하고 있습니다.
 
   - **도메인 중심의 문제 해결력**  
     기술 자체도 중요하지만 그것이 **서비스에서 어떤 가치를 만들어내는가**도 중요하게 생각합니다. 보험이라는 도메인에 대한 깊은 이해를 바탕으로, <mark>계약·설계·배서 등 핵심 업무 로직을 공통화하고 레거시 시스템을 효율적으로 개선</mark>하는 작업에 집중해 왔습니다.
@@ -106,12 +106,29 @@ content:
     layout: list
     content:
       - layout: top-middle
-        title: 레거시 시스템 개선
+        title: AI 기술에 대한 관심과 실전 적용 경험
+        quote: >
+          RAG, OCR, 시계열 예측, 영상 인식 등 다양한 AI 기술을 직접 서비스에 접목해본 실전 경험을 바탕으로,<br/>
+          단순 기술 도입을 넘는 실질적 문제 해결에 집중하고 있습니다.
+        description: |
+          - RAG 기반 사내 업무 봇 개발 (2025.03 ~ 현재)
+            - Spring AI 기반 오케스트레이터를 통해 LLM 응답 흐름 제어
+            - Slack, OpenSearch(Vector DB), Bedrock(Claude 3.5 sonnet) 등을 연계한 검색형 응답 시스템 구축
+          - OCR 서빙 데이터 플랫폼 개발 (2023.10 ~ 현재)
+            - MultipartFile, Byte Array, S3 URL 등 다양한 입력 포맷을 표준화하여 OCR 전처리 자동화
+            - JsonNode 기반 비정형 데이터 처리 구조 설계로 확장성 및 유지보수성 확보
+          - 시계열 예측 모델 기반 출국장 혼잡도 데이터 제공 (2024.10 ~ 2025.02)
+            - 데이터 수집 → 전처리 → 예측 모델 적용 → API 서빙까지 전체 파이프라인 구축
+          - 위성 영상 분석 AI 서비스 개발 (2020.01 ~ 2022.05)
+            - Object Detection 및 Classification 모델을 활용하여 분석 결과 정제 및 보고서 자동 생성
+
+      - layout: top-middle
+        title: 레거시 시스템 운영 및 개선
         quote: >
           복잡하게 얽힌 레거시 시스템의 구조를 분석하고, 안정성·성능·유지보수성을 고려한 개선 작업을 통해 서비스 품질과 개발 생산성을 동시에 향상시켰습니다.
         description: |
           - 데이터 키 관리 암호화 모듈 개선 (2025.03 ~ 2025.05)
-            - AWS와 직접 통신하는 중앙 키 관리 워크로드와, 키 캐싱 및 전달만 담당하는 SDK로 역할을 명확히 분리하여 시스템 안정성과 유연성 확보
+            - AWS와 직접 통신하는 중앙 키 관리 워크로드와 키 캐싱 및 전달만 담당하는 SDK로 역할을 명확히 분리하여 시스템 안정성과 유연성 확보
             - AWS SDK EOL 대응 및 불필요한 복호화 제거를 통해 보안성과 처리 효율 개선
             - 기존 모듈의 메서드 시그니처를 유지해 교체 시 호환성 확보
           - FEP 전문 통신 레거시 시스템 라이브러리화 (2024.02 ~ 2024.05)
@@ -144,23 +161,6 @@ content:
           - 위성 영상 프로세싱 아키텍처 설계 (2020.01 ~ 2022.05)
             - 영상 수신 → 타일링 → 인퍼런스 → 결과 저장 → 보고서 생성의 전체 프로세스를 정의
             - 각 단계는 Kotlin Coroutine 기반으로 비동기 처리하여 병렬성과 성능 확보
-
-      - layout: top-middle
-        title: AI 기술에 대한 관심과 실전 적용 경험
-        quote: >
-          RAG, OCR, 시계열 예측, 영상 인식 등 다양한 AI 기술을 직접 서비스에 접목해본 실전 경험을 바탕으로,<br/>
-          단순 기술 도입을 넘는 실질적 문제 해결에 집중하고 있습니다.
-        description: |
-          - RAG 기반 사내 업무 봇 개발 (2025.03 ~ 현재)
-            - Spring AI 기반 오케스트레이터를 통해 LLM 응답 흐름 제어
-            - Slack, OpenSearch(Vector DB), Bedrock(Claude 3.5 sonnet) 등을 연계한 검색형 응답 시스템 구축
-          - OCR 서빙 데이터 플랫폼 개발 (2023.10 ~ 현재)
-            - MultipartFile, Byte Array, S3 URL 등 다양한 입력 포맷을 표준화하여 OCR 전처리 자동화
-            - JsonNode 기반 비정형 데이터 처리 구조 설계로 확장성 및 유지보수성 확보
-          - 시계열 예측 모델 기반 출국장 혼잡도 데이터 제공 (2024.10 ~ 2025.02)
-            - 데이터 수집 → 전처리 → 예측 모델 적용 → API 서빙까지 전체 파이프라인 구축
-          - 위성 영상 분석 AI 서비스 개발 (2020.01 ~ 2022.05)
-            - Object Detection 및 Classification 모델을 활용하여 분석 결과 정제 및 보고서 자동 생성
 
   - title: Skill # Title for the section
     layout: list # Type of content section (list/text)
@@ -200,28 +200,6 @@ content:
         description: |
           - Kotlin으로 만들어진 예제 코드가 많이 부족하여 정리하기 위해 작성 시작함.
           - 현재는 영어로된 문서들을 공부하면서 얻은 정보들이나 읽었던 책 내용을 요약해서 모아두는 용도로 사용하고 있음.
-
-  - title: Education
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: 인프런
-        link: https://www.inflearn.com/
-        quote: >
-          Spring 및 Kotlin Coroutine 관련 강의 수강
-        description: | # this will include new lines to allow paragraphs
-          - <a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-JPA-%EC%8B%A4%EC%A0%84/dashboard">실전! 스프링 데이터 JPA</a>
-          - <a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1/dashboard">실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발</a>
-          - <a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-API%EA%B0%9C%EB%B0%9C-%EC%84%B1%EB%8A%A5%EC%B5%9C%EC%A0%81%ED%99%94/dashboard">실전! 스프링 부트와 JPA 활용2 - API 개발과 성능 최적화</a>
-          - <a href="https://www.inflearn.com/course/%EC%83%88%EC%B0%A8%EC%9B%90-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4/dashboard">새차원의 코틀린 코루틴 강좌</a>
-          - <a href="https://www.inflearn.com/course/ORM-JPA-Basic/dashboard">자바 ORM 표준 JPA 프로그래밍 - 기본편</a>
-      - layout: left
-        title: 패스트캠퍼스
-        link: https://fastcampus.co.kr/
-        quote: >
-          TDD 강의 수강
-        description: |
-          - <a href="https://fastcampus.co.kr/dev_red_ygw">현실 세상의 TDD : 안정감을 주는 코드 작성 방법</a>
 
 # Footer
 footer_show_references: true
